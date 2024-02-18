@@ -10,12 +10,52 @@ body {
     color: black;
     text-align: center;
 }
-#quiz-container {
+#app-container {
     background: white;
     width: 80%;
     max-width: 600px;
     margin: 100px auto;
-    height: 300px;
-    border-radius: 5PX;
+    height: 500px;
+    border-radius: 10px;
     padding: 20px;
+}
+
+.quiz {
+    padding: 20px;
+}
+
+.quiz h2 {
+    font-size: 35px;
+}
+
+.btn {
+    background-color: white;
+    color:black;
+    font-weight: 300;
+    width: 80%;
+    border: 2px solid black;
+    padding: 10px  20px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+  background: orange;
+  color: white;
+}
+
+#next-btn {
+    background: rgb(91, 148, 233) ;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 20PX;
+    transition: all 0.3s;
+}
+
+#next-btn:hover {
+    background: rgb(47, 83, 138)
 }
