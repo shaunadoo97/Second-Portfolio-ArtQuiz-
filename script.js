@@ -21,7 +21,7 @@ const questions = [
 ];
 
 const questionElement = document.getElementById("questions"); 
-const answerElement = document.getElementById("answer-btns"); 
+const answerButtons = document.getElementById("answer-btns"); 
 const nextButton = document.getElementById("next-btn"); 
 
 let currentQuestionIndex = 0;
@@ -35,6 +35,7 @@ function startQuiz(){
 }
 
 function showQuestion() {
+    resetStae()
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo = "." + currentQuestion.question;
@@ -43,8 +44,16 @@ function showQuestion() {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("button");
-        answerButton.appendChild(button);
+        answerButtons.appendChild(button);
     });
+}
+
+function resetState() {
+    nextButton.style.display = "none"
+    while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+    }
+  
 }
 
 startQuiz();
