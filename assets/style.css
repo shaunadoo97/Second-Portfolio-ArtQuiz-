@@ -54,6 +54,8 @@ body {
     border-radius: 20px;
     font-size: 20PX;
     transition: all 0.3s;
+    cursor: pointer;
+    display: none;
 }
 
 #next-btn:hover {
