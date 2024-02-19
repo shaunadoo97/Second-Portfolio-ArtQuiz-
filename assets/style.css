@@ -6,6 +6,7 @@
 body {
     background-color:orange;
 }
+/**Styling and making the quiz simple and basic as I want to focus on Javascript*/
 #test {
     color: black;
     text-align: center;
@@ -20,13 +21,18 @@ body {
     padding: 20px;
 }
 
-.quiz {
+#quiz{
     padding: 20px;
 }
 
 .quiz h2 {
     font-size: 35px;
 }
+
+.hide {
+    display: none;
+}
+
 
 .btn {
     background-color: white;
@@ -55,9 +61,31 @@ body {
     font-size: 20PX;
     transition: all 0.3s;
     cursor: pointer;
-    display: none;
+   
+}
+
+#start-btn {
+    background: rgb(91, 148, 233) ;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 20PX;
+    transition: all 0.3s;
+    cursor: pointer;
+   
 }
 
 #next-btn:hover {
     background: rgb(47, 83, 138)
+}
+
+#start-btn:hover  {
+    background: rgb(47, 83, 138)
+
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

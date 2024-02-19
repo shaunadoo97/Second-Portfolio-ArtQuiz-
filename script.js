@@ -1,59 +1,51 @@
+const startButton = document.getElementById("start-btn")
+const questionContainerElement = document.getElementById("quiz")
+const questionElement = document.getElementById("question")
+const answerButtonElement = document.getElementById("answer-btns")
+
+let shuffledQuestions, currentQuestionIndex 
+
+startButton.addEventListener("click", startGame)
+
+function startGame() {
+ console.log("Started!")
+ startButton.classList.add("hide")
+ shuffledQuestions = questions.sort(() => Math.random() - .5)
+ currentQuestionIndex = 0
+ questionContainerElement.classList.remove("hide")
+ setNextQuestion()
+}
+
+function setNextQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+
+}
+
+function showQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.forEach ( answer => {
+        const button = document.createElement("btn")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonElement.appendChild(button)
+    })
+
+}
+
+function selectAnswer() {
+
+}
+
 const questions = [
     {
-        question: "Which is largest mammal in the world?",
-        answers: [
-            {text: "shark" , correct: false},
-            {text: "blue whale" , correct: true},
-            {text: "elephant" , correct: false},
-            {text: "giraffe" , correct: false},
+        question: 'What is 2 = 2', 
+        answers: [ 
+            { text: "4", correct: true },
+            { text: "22", correct: false }
         ]
-    },
-    {
-        question: "Which is smallest mammal in the world?",
-        answers: [
-            {text: "mouse" , correct: true},
-            {text: "blue whale" , correct: false},
-            {text: "elephant" , correct: false},
-            {text: "giraffe" , correct: false},
-        ]
-    },
-
-];
-
-const questionElement = document.getElementById("questions"); 
-const answerButtons = document.getElementById("answer-btns"); 
-const nextButton = document.getElementById("next-btn"); 
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
-}
-
-function showQuestion() {
-    resetStae()
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo = "." + currentQuestion.question;
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("button");
-        answerButtons.appendChild(button);
-    });
-}
-
-function resetState() {
-    nextButton.style.display = "none"
-    while (answerButtons.firstChild) {
-    answerButtons.removeChild(answerButtons.firstChild);
     }
-  
-}
-
-startQuiz();
+]
