@@ -26,8 +26,14 @@ body {
 }
 
 .quiz h2 {
-    font-size: 35px;
+    font-size: 40px;
 }
+
+#question {
+    font-size: 200%;
+
+}
+
 
 .hide {
     display: none;
@@ -35,7 +41,8 @@ body {
 
 
 .btn {
-    background-color: white;
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 50%);
     color:black;
     font-weight: 300;
     width: 80%;
@@ -48,9 +55,18 @@ body {
     transition: all 0.3s;
 }
 
+
 .btn:hover {
   background: orange;
   color: white;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
 }
 
 #next-btn {
