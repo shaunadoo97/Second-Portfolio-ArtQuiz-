@@ -56,6 +56,11 @@ function selectAnswer(e) {
     Array.from(answerButtonElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove("hide")
+    } else {
+        startButton.innerText = "Restart"
+    }
     nextButton.classList.remove("hide")
 }
 
@@ -67,6 +72,7 @@ function setStatusClass(element, correct) {
         element.classList.add("wrong")
     }
 }
+
 function clearStatusClass(element) {
     element.classList.remove("correct")
     element.classList.remove("wrong")
@@ -82,5 +88,18 @@ const questions = [{
             text: "22",
             correct: false
         }
-    ]
+    ],
+
+    question: "What is the largest animal",
+    answers: [{
+            text: "Lion",
+            correct: true
+        },
+
+        {
+            text: "mouse",
+            correct: false
+        }
+    ],
+
 }]
