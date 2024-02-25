@@ -4,15 +4,10 @@
     box-sizing: border-box;
 }
 
-:root {
---hue-neutral: 39;
---hue-wrong: 0;
---hue-correct: 140;
-}
+
 
 body {
-    --hue: var(--hue-neutral);
-    background-color: hsl(var(--hue), 100%, 50%);
+background-color: orange;
 }
 
 
@@ -67,11 +62,13 @@ body {
 
 
 .btn.correct {
-    --hue: var(--hue-correct);
+    background-color: rgb(34, 211, 34);
+    color: black
 }
 
 .btn.wrong {
-    --hue: var(--hue-wrong);
+   background-color: rgb(209, 80, 80);
+   color: white;
 }
 
 #next-btn {
