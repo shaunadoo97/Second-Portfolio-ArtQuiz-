@@ -1,9 +1,11 @@
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const startTest = document.getElementById('test')
-const questionContainerElement = document.getElementById('quiz')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-btns') 
+/**Credits to Web Dev Simplified for guidance on Javascript */
+
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const startTest = document.getElementById('test');
+const questionContainerElement = document.getElementById('quiz');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-btns');
 let score = 1;
 
 
@@ -16,7 +18,7 @@ nextButton.addEventListener('click', ()=> {
 })
 
 function gameStart() {
-   
+    startTest
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0 
@@ -90,6 +92,7 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
+/**Adding in the Art Questions */
 const questions = [
     {
         question: 'Which artist is famous for his series of paintings featuring water lilies?',
@@ -129,10 +132,73 @@ const questions = [
             { text: 'Caravaggio', correct: false},
             {text: 'Lorenzo Ghiberti', correct: false},
             {text: 'Filippo Brunelleschi', correct: false},
-            {text: 'Michelangelo ', correct: true},
+            {text: 'Michelangelo', correct: true},
         ]
         
-    }
+    },
+
+    {
+        question: 'Which art movement is known for its use of vibrant colors and swirling shapes?',
+        answers: [
+            { text: 'Cubism', correct: false},
+            {text: 'Impressionism', correct: true},
+            {text: 'Surrealism', correct: false},
+            {text: 'Precisionism', correct: false},
+        ]
+        
+    },
+    {
+        question: 'Which Dutch painter is famous for his realistic and detailed portraits, including "Girl with a Pearl Earring"?',
+        answers: [
+            { text: 'Edgar Degas', correct: false},
+            {text: 'Caravaggio', correct: false},
+            {text: 'Johannes Vermeer', correct: true},
+            {text: 'Rembrandt', correct: false},
+        ]
+        
+    },
+    {
+        question: 'Who painted "Starry Night," a famous depiction of swirling stars and a bright crescent moon?',
+        answers: [
+            { text: 'Salvador Dalí', correct: false},
+            {text: 'Jeff Koons', correct: false},
+            {text: 'Pablo Picasso', correct: false},
+            {text: 'Vincent Van Gogh', correct: true},
+        ]
+        
+    },
+    {
+        question: 'Who painted "The Birth of Venus," depicting the goddess Venus emerging from the sea on a scallop shell?',
+        answers: [
+            { text: 'Andrea del Verocchio', correct: false},
+            {text: 'Sandro Botticelli', correct: true},
+            {text: 'Giovanni Bellini', correct: false},
+            {text: 'Giorgione', correct: false},
+        ]
+        
+    },
+    {
+        question: 'What is the term for a style of art characterized by exaggerated or distorted features, often used for satirical or comedic effect?',
+        answers: [
+            { text: 'Abstract', correct: false},
+            {text: 'Pop Art', correct: false},
+            {text: 'Caricature', correct: true},
+            {text: 'Contemporary', correct: false},
+        ]
+        
+    },
+    {
+        question: 'Who sculpted the famous statue of David?',
+        answers: [
+            { text: 'Raphael', correct: false},
+            {text: 'Donatello', correct: false},
+            {text: 'Lorenzo Ghiberti', correct: false},
+            {text: 'Michelangelo', correct: true},
+        ]
+        
+    },
+
+    
 
     
 ]
