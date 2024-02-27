@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Art Quiz!</title>
 </head>
+
+
 <!--Start of the html quiz-->
 
 <body>
     <div id="app-container">
         <h1>Welcome to my Art Quiz!</h1>
 
-        <div id=" intro">
+        <div id="intro">
         <h2>Introductions</h2>
         <p id="instruct">There are 10 questions in this quiz in relations to Art. You will have 10 seconds to answer before the time runs out, if the time is up, game over! 
             Click the start button below to start the game. Best of luck!
@@ -30,21 +32,19 @@
             <h2 id="timer"></h2>
             <!--Adding in some buttons for questions-->
             <div id="answer-btns">
-                <button class="btn">Answer 1 </button>
-                <button class="btn">Answer 2 </button>
-                <button class="btn">Answer 3 </button>
-                <button class="btn">Answer 4 </button>
+                <button onclick="myStopFunction() " class="btn">Answer 1 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 2 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 3 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 4 </button>
             </div>
         </div>
 <!--Adding in start and end buttons-->
             <div class="controls">
                 <button id="start-btn">Start</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
-            
-
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
