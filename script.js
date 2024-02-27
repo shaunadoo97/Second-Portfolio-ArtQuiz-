@@ -4,6 +4,7 @@ const startTest = document.getElementById('test')
 const questionContainerElement = document.getElementById('quiz')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-btns') 
+let score = 0;
 
 
 let shuffledQuestions, currentQuestionIndex
@@ -45,13 +46,17 @@ function showQuestion(question) {
 }
 
 function resetState() {
-    clearStatusClass(document.body)
+    try {
+   clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
+} catch (err) {
+    alert(err.message)
 }
+    }
+ 
 
 function selectAnswer(e) {
  const selectedButton = e.target;
@@ -71,8 +76,9 @@ function selectAnswer(e) {
 }
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    clearStatusClass(element);
     if (correct) {
+        score++;
         element.classList.add("correct");
     } else {
         element.classList.add("wrong");
@@ -115,7 +121,20 @@ const questions = [
             {text: 'Johannes Vermeer', correct: false},
         ]
         
+    },
+
+    {
+        question: 'Who is the artist behind the "Sistine Chapel Ceiling" frescoes in Vatican City?',
+        answers: [
+            { text: 'Caravaggio', correct: false},
+            {text: 'Lorenzo Ghiberti', correct: false},
+            {text: 'Filippo Brunelleschi', correct: false},
+            {text: 'Michelangelo ', correct: true},
+        ]
+        
     }
+
+    
 ]
 const myTimeout = setTimeout(gameOver, 10000);
 
