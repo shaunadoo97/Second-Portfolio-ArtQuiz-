@@ -4,7 +4,7 @@ const startTest = document.getElementById('test')
 const questionContainerElement = document.getElementById('quiz')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-btns') 
-let score = 0;
+let score = 1;
 
 
 let shuffledQuestions, currentQuestionIndex
