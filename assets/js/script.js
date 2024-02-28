@@ -1,4 +1,4 @@
-/**Credits to Web Dev Simplified for guidance on Javascript */
+/**Credits to Web Dev Simplified for guidance on Quiz Javascript */
 
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
@@ -6,25 +6,28 @@ const startTest = document.getElementById('intro');
 const questionContainerElement = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-btns');
-let score = 1;
 
+document.addEventListener("DOMContentLoaded", startButton)
 
 let shuffledQuestions, currentQuestionIndex
+let scoreCounter = 1;
+let score = 1;
 
 startButton.addEventListener('click', gameStart)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
+    userScore()
 })
 
 function gameStart() {
     startTest.classList.add('hide')
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
+    currentQuestionIndex = 0;
+    questionContainerElement.classList.remove('hide');
     setNextQuestion()
-    
+
 
 }
 
@@ -81,7 +84,7 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
-        score++;
+
         element.classList.add("correct");
     } else {
         element.classList.add("wrong");
@@ -322,4 +325,14 @@ function gameOver() {
 
 function myStopFunction() {
     clearTimeout(myTimeout);
+}
+
+/**Adding in Score suggested by my Mentor */
+function userScore() {
+    if (selectAnswer === 'correct') {
+        scoreCounter++;
+        scoreCounterElement.innerText = +score;
+    }
+    console.log('Increased Score by 1')
+
 }
