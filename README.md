@@ -27,7 +27,7 @@ In the build and deployment section, click the Branch and a dropdown menu will a
 
 Click save after this step and a confirmation of deployment should be confirmed shortly.
 
-To know this, a green colored box with message is received saying "Your site is published at" with a web address. My website is live at :
+To know this, a green colored box with message is received saying "Your site is published at" with a web address. My website is live at : https://shaunadoo97.github.io/Second-Portfolio-ArtQuiz-/
 
 ## Testing and Code Validation 
 
@@ -35,3 +35,4 @@ To know this, a green colored box with message is received saying "Your site is 
 ### Codes so far 
 I've used the css layout from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1396s
 Guidance on Javascript using https://www.youtube.com/watch?v=riDzcEQbX6k
+I've used reference from W3 Schools for timer function: 
