@@ -312,7 +312,8 @@ const questions = [{
 
 
 ]
-
+/**Setting timer for Time runs out, need to come back and work on this. 
+ * Reference from W3 schools */
 const myTimeout = setTimeout(gameOver, 10000);
 
 function gameOver() {
