@@ -37,13 +37,17 @@ To know this, a green colored box with message is received saying "Your site is 
 
 Html testing so far, no errors 
 
-<img src="assets/documentation/html_test.png" width="700" height ="350">
+<img src="assets/documentation/html_test.png" width="700" height="350">
 
 css testing so far, no errors 
 
 
 <img src="assets/documentation/css_test.png" width="700" height ="350">
 
+## Accessibility 
+Testing so far from the Lighthouse accessibility
+
+<img src="assets/documentation/lighthouse.png" width="600" height="350">
 ## Credits
 ### Codes so far 
 I've used the css layout from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1396s
