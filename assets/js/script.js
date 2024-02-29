@@ -1,5 +1,3 @@
-/**Credits to Web Dev Simplified for guidance on Quiz Javascript */
-
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const startTest = document.getElementById('intro');
@@ -7,59 +5,59 @@ const questionContainerElement = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-btns');
 
-document.addEventListener("DOMContentLoaded", startButton)
+document.addEventListener("DOMContentLoaded", startButton);
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
 let scoreCounter = 1;
 let score = 1;
 
-startButton.addEventListener('click', gameStart)
+startButton.addEventListener('click', gameStart);
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
-    userScore()
-})
+    currentQuestionIndex++;
+    setNextQuestion();
+    userScore();
+});
 
 function gameStart() {
-    startTest.classList.add('hide')
-    startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    startTest.classList.add('hide');
+    startButton.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
-    setNextQuestion()
+    setNextQuestion();
 
 
 }
 
 function setNextQuestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    resetState();
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
 
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
     })
 }
 
 function resetState() {
     try {
-        clearStatusClass(document.body)
-        nextButton.classList.add('hide')
+        clearStatusClass(document.body);
+        nextButton.classList.add('hide');
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
     } catch (err) {
-        alert(err.message)
+        alert(err.message);
     }
 }
 
@@ -67,16 +65,16 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct)
+    setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
         button.removeEventListener("click", selectAnswer);
         setStatusClass(button, button.dataset.correct);
-    })
+    });
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide');
     } else {
-        startButton.innerText = "Restart"
-        startButton.classList.remove("hide")
+        startButton.innerText = "Restart";
+        startButton.classList.remove("hide");
     }
 
 }
@@ -92,8 +90,8 @@ function setStatusClass(element, correct) {
 }
 
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 /**Adding in the Art Questions */
@@ -314,13 +312,13 @@ const questions = [{
 
 
 
-]
+];
 /**Setting timer for Time runs out, need to come back and work on this. 
  * Reference from W3 schools */
 const myTimeout = setTimeout(gameOver, 10000);
 
 function gameOver() {
-    document.getElementById("timer").innerHTML = "Time ran out!"
+    document.getElementById("timer").innerHTML = "Time ran out!";
 }
 
 function myStopFunction() {
@@ -333,6 +331,6 @@ function userScore() {
         scoreCounter++;
         scoreCounterElement.innerText = +score;
     }
-    console.log('Increased Score by 1')
+    console.log('Increased Score by 1');
 
 }

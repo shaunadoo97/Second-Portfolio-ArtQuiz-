@@ -12,6 +12,10 @@ Here are my wireframes:
 
 ## My Colour Schemes
 
+ This is my colour scheme 
+
+ <img src="assets/documentation/colour.png" width="600" height="200"> 
+
 ## Deployment 
 My project was deployed by using the Github pages.
 
@@ -30,6 +34,15 @@ Click save after this step and a confirmation of deployment should be confirmed 
 To know this, a green colored box with message is received saying "Your site is published at" with a web address. My website is live at : https://shaunadoo97.github.io/Second-Portfolio-ArtQuiz-/
 
 ## Testing and Code Validation 
+
+Html testing so far, no errors 
+
+<img src="assets/documentation/html_test.png" width="700" height ="350">
+
+css testing so far, no errors 
+
+
+<img src="assets/documentation/css_test.png" width="700" height ="350">
 
 ## Credits
 ### Codes so far 
