@@ -48,6 +48,8 @@ css testing so far, no errors
 Testing so far from the Lighthouse accessibility
 
 <img src="assets/documentation/lighthouse.png" width="600" height="350">
+
+
 ## Credits
 ### Codes so far 
 I've used the css layout from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1396s
