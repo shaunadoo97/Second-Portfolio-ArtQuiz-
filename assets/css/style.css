@@ -86,6 +86,7 @@ background-color: orange;
     font-size: 20PX;
     transition: all 0.3s;
     cursor: pointer;
+    color: black;
    
 }
 
@@ -97,16 +98,18 @@ background-color: orange;
     font-size: 20PX;
     transition: all 0.3s;
     cursor: pointer;
+    color: black;
    
 }
 
 #next-btn:hover {
-    background: rgb(47, 83, 138)
+    background: rgb(47, 83, 138);
+    color: white;
 }
 
 #start-btn:hover  {
-    background: rgb(47, 83, 138)
-
+    background: rgb(47, 83, 138);
+    color:white;
 }
 
 .controls {
@@ -117,11 +120,10 @@ background-color: orange;
 
 @media screen and (max-width: 576px) {
    app-container {
-     background: white;
+    background: white;
     width: 80%;
     max-width: 600px;
     margin: 100px auto;
-    height: 400px;
     border-radius: 10px;
     padding: 20px;
 }
@@ -131,8 +133,8 @@ background-color: orange;
     text-align: center;
 }
 
-#questions {
-    font-size: 100%;
+#instruct {
+    font-size: 120%;
 }
    }
 
@@ -162,6 +164,3 @@ background-color: orange;
  }
 }
 
-@media screen and (min-width: 992px) {
-
-}
