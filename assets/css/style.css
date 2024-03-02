@@ -27,6 +27,7 @@ background-color: orange;
     padding: 20px;
 }
 
+/**Styling the quiz**/
 #instruct {
     padding: 10px;
     font-size: 220%;
@@ -64,9 +65,7 @@ background-color: orange;
     cursor: pointer;
     transition: all 0.3s;
 }
-
-
-
+/**Indicating to show whether the questions were correct or wrong, green for right, red for wrong.**/
 .btn.correct {
     background-color: rgb(34, 211, 34);
     color: black
@@ -117,7 +116,7 @@ background-color: orange;
     justify-content: center;
     align-items: center;
 }
-
+/**Making sure the site is responsive**/
 @media screen and (max-width: 576px) {
    app-container {
     background: white;
@@ -138,7 +137,7 @@ background-color: orange;
 }
 
 #question {
-    font-size: 130%;
+    font-size: 120%;
 }
 
 .btn {
