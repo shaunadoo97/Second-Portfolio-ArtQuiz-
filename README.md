@@ -6,7 +6,7 @@ I've made a game quiz to test your knowledge on Art.
 # Contents 
 [Users Stories](#user-stories "Go to User-stories")
 
-[My My Wireframes](#my-wireframes "Go to my-wireframes")
+[My Wireframes](#my-wireframes "Go to my-wireframes")
 
 [My Colour Schemes](#my-colour-schemes "Go to my-colour-schemes")
 
@@ -37,6 +37,26 @@ Here are my wireframes:
  This is my colour scheme 
 
  <img src="assets/documentation/colour.png" width="600" height="200"> 
+
+## General 
+Introduction about my game 
+
+Start of the home page 
+
+<img src="assets/documentation/game_page.png"  width="300" height="200">
+
+this is when you hover your button over the start button 
+
+<img src="assets/documentation/hover_overstart.png" width="300" height="200">
+
+Quiz startiing 
+
+<img src="assets/documentation/quiz_page.png" width="300" height="200">
+
+Quiz answers 
+To show whether the person got a right or wrong answer
+
+<img src="assets/documentation/quiz_color.png" width="300" height="200">
 
 ## Deployment 
 My project was deployed by using the Github pages.
@@ -72,8 +92,9 @@ Testing so far from the Lighthouse accessibility
 <<img src="assets/documentation/lighthouse.png" width="600" height="350"> 
 
 
-## Credits
+## Credits and Codes
 ### Codes so far 
 I've used the css layout from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1396s
 Guidance on Javascript using https://www.youtube.com/watch?v=riDzcEQbX6k
 I've used reference from W3 Schools for timer function: https://www.w3schools.com/ 
+I got my random art quiz questions from https://chat.openai.com/ 

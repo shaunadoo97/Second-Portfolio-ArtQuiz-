@@ -7,7 +7,7 @@
 
 
 body {
-background-color: orange;
+    background-color: orange;
 }
 
 
@@ -17,6 +17,7 @@ background-color: orange;
     color: black;
     text-align: center;
 }
+
 #app-container {
     background: white;
     width: 80%;
@@ -34,7 +35,7 @@ background-color: orange;
     text-align: center;
 }
 
-#quiz{
+#quiz {
     padding: 20px;
 }
 
@@ -54,109 +55,6 @@ background-color: orange;
 
 
 .btn {
-    color:black;
-    font-weight: 300;
-    width: 80%;
-    border: 2px solid black;
-    padding: 10px  20px;
-    margin: 10px 0;
-    text-align: left;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-/**Indicating to show whether the questions were correct or wrong, green for right, red for wrong.**/
-.btn.correct {
-    background-color: rgb(34, 211, 34);
-    color: black
-}
-
-.btn.wrong {
-   background-color: rgb(209, 80, 80);
-   color: white;
-}
-
-#next-btn {
-    width: 100px;
-    background: rgb(91, 148, 233) ;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-size: 20PX;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-   
-}
-
-#start-btn {
-    background: rgb(91, 148, 233) ;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-size: 20PX;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-   
-}
-
-#next-btn:hover {
-    background: rgb(47, 83, 138);
-    color: white;
-}
-
-#start-btn:hover  {
-    background: rgb(47, 83, 138);
-    color:white;
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/**Making sure the site is responsive**/
-@media screen and (max-width: 576px) {
-   app-container {
-    background: white;
-    width: 80%;
-    max-width: 600px;
-    margin: 100px auto;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.h1, h1 {
-    font-size: 20px;
-    text-align: center;
-}
-
-#instruct {
-    font-size: 120%;
-}
-
-#question {
-    font-size: 120%;
-}
-
-.btn {
-    width: 110%;
-}
-   }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
- #app-container {
-    background: white;
-    width: 80%;
-    max-width: 600px;
-    margin: 150px auto;
-    height: 700px;
-    border-radius: 10px;
-    padding: 20px;
- }
-
- .btn {
     color: black;
     font-weight: 300;
     width: 80%;
@@ -167,7 +65,112 @@ background-color: orange;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 200%;
- }
 }
 
+/**Indicating to show whether the questions were correct or wrong, green for right, red for wrong.**/
+.btn.correct {
+    background-color: rgb(34, 211, 34);
+    color: black
+}
+
+.btn.wrong {
+    background-color: rgb(209, 80, 80);
+    color: white;
+}
+
+#next-btn {
+    width: 100px;
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 20PX;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+
+}
+
+#start-btn {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 20PX;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+
+}
+
+#next-btn:hover {
+    background: rgb(47, 83, 138);
+    color: white;
+}
+
+#start-btn:hover {
+    background: rgb(47, 83, 138);
+    color: white;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**Making sure the site is responsive**/
+@media screen and (max-width: 576px) {
+    app-container {
+        background: white;
+        width: 80%;
+        max-width: 600px;
+        margin: 100px auto;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .h1,
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #instruct {
+        font-size: 120%;
+    }
+
+    #question {
+        font-size: 120%;
+    }
+
+    .btn {
+        width: 110%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #app-container {
+        background: white;
+        width: 80%;
+        max-width: 600px;
+        margin: 150px auto;
+        height: 700px;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .btn {
+        color: black;
+        font-weight: 300;
+        width: 80%;
+        border: 2px solid black;
+        padding: 10px 20px;
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 200%;
+    }
+}

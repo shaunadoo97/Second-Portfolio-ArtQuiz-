@@ -18,6 +18,7 @@ nextButton.addEventListener('click', () => {
     userScore();
 });
 
+/**Starting game function */
 function gameStart() {
     startTest.classList.add('hide');
     startButton.classList.add('hide');
@@ -25,7 +26,6 @@ function gameStart() {
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
-
 
 }
 
