@@ -91,7 +91,7 @@ css testing so far, no errors
 ## Accessibility 
 Testing so far from the Lighthouse accessibility
 
-<<img src="assets/documentation/lighthouse_access.png" width="600" height="350"> 
+<<img src="assets/documentation/lighthouse_access.png" width="600" height="190"> 
 
 
 ## Credits and Codes

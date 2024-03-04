@@ -1,3 +1,4 @@
+/**Credits to Web Dev for javascript and functionality of my quiz game*/
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const startTest = document.getElementById('intro');
