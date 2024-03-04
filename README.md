@@ -4,7 +4,7 @@ Welcome to my Art Quiz Test!
 I've made a game quiz to test your knowledge on Art. 
 
 # Contents 
-[Users Stories](#user-stories "Go to User-stories")
+
 
 [My Wireframes](#my-wireframes "Go to my-wireframes")
 
@@ -22,8 +22,6 @@ I've made a game quiz to test your knowledge on Art.
 
 [Credits and Codes](#credits-and-codes "Go to credits-and-codes")
 
-
-## Users Stories 
 
 ## My Wireframes 
 Here are my wireframes:
@@ -75,6 +73,10 @@ Click save after this step and a confirmation of deployment should be confirmed 
 
 To know this, a green colored box with message is received saying "Your site is published at" with a web address. My website is live at : https://shaunadoo97.github.io/Second-Portfolio-ArtQuiz-/
 
+## Additional Notes
+
+unfortunately I did find Javascript a bit difficult and it took me a while to understand just how the functionalty works but with the limited time given, I wasm't able to do it in a way i wanted it done. I hope to come back to this and improve as much as I can. 
+
 ## Testing and Code Validation 
 
 Html testing so far, no errors 
@@ -89,7 +91,7 @@ css testing so far, no errors
 ## Accessibility 
 Testing so far from the Lighthouse accessibility
 
-<<img src="assets/documentation/lighthouse.png" width="600" height="350"> 
+<<img src="assets/documentation/lighthouse_access.png" width="600" height="350"> 
 
 
 ## Credits and Codes
