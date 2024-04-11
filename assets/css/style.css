@@ -104,7 +104,7 @@ body {
 
 /**Styling the quiz**/
 .quiz_box {
-    display: none;
+   
     position: absolute;
     top: 10%;
     left: 32%;
@@ -207,15 +207,84 @@ footer .next-btn {
     margin-right: 10px;
 }
 
-
 footer .next-btn:hover {
     background: rgb(47, 83, 138);
     color: white;
 }
 
-.hide {
+.result_box {
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 450px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    width:500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
     display: none;
 }
+
+.result_box .complete {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.result_box .score span {
+    display: flex;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.score span p {
+    padding: 0 5px;
+}
+
+.result_box .btns {
+    display: flex;
+    margin: 25px 0px;
+}
+
+.result_box .btns button {
+    margin: 0 12px;
+    padding:12px;
+}
+.reset {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+}
+
+.reset:hover {
+    background: rgb(47, 83, 138);
+    color: white;
+}
+
+.quit {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+}
+.quit:hover {
+    background: rgb(47, 83, 138);
+    color: white;
+}
+
 
 
 .btn {
