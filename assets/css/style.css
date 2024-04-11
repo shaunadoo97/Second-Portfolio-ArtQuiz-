@@ -103,13 +103,29 @@ body {
 }
 
 /**Styling the quiz**/
-
-#quiz {
-    padding: 20px;
+.quiz_box {
+    position: absolute;
+    top: 20%;
+    left: 32%;
+    width: 450px;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.quiz h2 {
-    font-size: 40px;
+.quiz_box header {
+    height:60px;
+    padding: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0px 1px 20px 1px rgb(47, 83, 138);
+}
+
+#title {
+    font-size: 30px;
+    font-weight: 30%;
 }
 
 #question {
@@ -147,18 +163,6 @@ body {
     color: white;
 }
 
-#next-btn {
-    width: 100px;
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-size: 20PX;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-
-}
 
 #start-btn {
     position: absolute;
@@ -173,6 +177,18 @@ body {
     cursor: pointer;
     color: black;
 
+}
+
+#next-btn {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 17px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+    margin-right: 10px;
 }
 
 #next-btn:hover {
