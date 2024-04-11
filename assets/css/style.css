@@ -1,4 +1,5 @@
-/**Credits to Greattack from youtube for the style*/* {
+/**Credits to Greattack from youtube for the style*/
+* {
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
@@ -18,22 +19,90 @@ body {
     text-align: center;
 }
 
-#app-container {
-    background: white;
-    width: 80%;
-    max-width: 600px;
-    margin: 100px auto;
-    height: 700px;
+#intro {
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 32%;
+    width: 450px;
+    background-color: white;
     border-radius: 10px;
+}
+
+#instruct_title {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid rgb(91, 148, 233);
+    text-align: center;
+    display: flex;
+    justify-content: center;
     padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#rules {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#intro_list {
+    padding: 30px;
+    font-size: 15px;
+}
+
+.info {
+    margin: 5px;
+}
+
+.controls {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 20px;
+    border-top: 1px solid rgb(91, 148, 233);
+}
+
+#quit {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 17px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+    margin-right: 10px;
+}
+
+#quit:hover {
+    background:white; 
+    color: rgb(47, 83, 138);
+    
+}
+
+#reset {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 17px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+    margin-left: 10px;
+}
+
+#reset:hover {
+    background: rgb(47, 83, 138);
+    color: white;
 }
 
 /**Styling the quiz**/
-#instruct {
-    padding: 10px;
-    font-size: 220%;
-    text-align: center;
-}
 
 #quiz {
     padding: 20px;
@@ -93,8 +162,8 @@ body {
 
 #start-btn {
     position: absolute;
-    top:50%;
-    left:40%;
+    top: 40%;
+    left: 38%;
     background: rgb(91, 148, 233);
     color: white;
     padding: 12px 25px;
@@ -116,11 +185,6 @@ body {
     color: white;
 }
 
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /**Making sure the site is responsive**/
 @media screen and (max-width: 576px) {
