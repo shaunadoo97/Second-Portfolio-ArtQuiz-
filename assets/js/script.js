@@ -220,22 +220,3 @@ const questions = [{
 ];
 /**Setting timer for Time runs out, need to come back and work on this. 
  * Reference from W3 schools */
-const myTimeout = setTimeout(gameOver, 10000);
-
-function gameOver() {
-    document.getElementById("timer").innerHTML = "Time ran out!";
-}
-
-function myStopFunction() {
-    clearTimeout(myTimeout);
-}
-
-/**Adding in Score suggested by my Mentor */
-function userScore() {
-    if (selectAnswer === 'correct') {
-        scoreCounter++;
-        scoreCounterElement.innerText = +score;
-    }
-    console.log('Increased Score by 1');
-
-}
