@@ -25,7 +25,7 @@
         <div id="intro">
             <div id="instruct_title">Welcome to my Art Quiz!
             </div>
-            <div id="rules">Rules</div>
+            <div id=>Rules</div>
             <div id="intro_list">
                 <div class="info">1. You will only have 10 seconds for each question.</div>
                 <div class="info">2. Once you've chosen your answer, you cannot change it.</div>
@@ -39,25 +39,44 @@
             </div>
         </div>
 
-        <div id="quiz" class="hide">
-            <div id="question">Questions</div>
-            <h2 id="timer">00:00</h2>
-
             <!--Adding in the Art Questions-->
             <!--Adding in some buttons for questions-->
-            <div id="answer-btns">
-                <button onclick="myStopFunction() " class="btn">Answer 1 </button>
-                <button onclick="myStopFunction()" class="btn">Answer 2 </button>
-                <button onclick="myStopFunction()" class="btn">Answer 3 </button>
-                <button onclick="myStopFunction()" class="btn">Answer 4 </button>
-            </div>
+        <div class="quiz_box">
+            <header>
+                <div class="title">Art Quiz</div>
+                <div class="timer">
+                    <div class="time-text">Time Left</div>
+                    <div class="timer-sec">10</div>
+                </div>
+            </header>
+            <section>
+                <div class="que-box">
+                    <span>What is 2 + 2?</span>
+                </div>
+                <div class="option-list">
+                    <div class="option">
+                        <span>3</span>
+                    </div>
+                    <div class="option">
+                        <span>4</span>
+                    </div>
+                    <div class="option">
+                        <span>5</span>
+                    </div>
+                    <div class="option">
+                        <span>1</span>
+                    </div>
+                </div>
+            </section>
         </div>
-
-
-        </div>
-
     </section>
-
+    <!--Quiz Footer-->
+    <footer>
+        <div class="total-ques">
+            <span><p>2</p>of<p>5</p>Questions</span>
+        </div>
+        <button id="next-btn">Next</button></div>
+    </footer>
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
