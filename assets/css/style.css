@@ -104,6 +104,7 @@ body {
 
 /**Styling the quiz**/
 .quiz_box {
+    display: none;
     position: absolute;
     top: 10%;
     left: 32%;
