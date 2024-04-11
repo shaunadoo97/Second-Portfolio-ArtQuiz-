@@ -14,40 +14,44 @@
 </head>
 
 
-<!--Start of the html quiz-->
+<!--Start of the Quiz-->
 
 <body>
     <section>
-        <div id="app-container">
-            <h1>Welcome to my Art Quiz!</h1>
-
-            <div id="intro">
-                <h2>Introductions</h2>
-                <p id="instruct">There are 10 questions in this quiz in relations to Art. You will have 10 seconds to
-                    answer before the time runs out, if the time is up, game over!
-                    Click the start button below to start the game. Best of luck!
-                </p>
-            </div>
-
-            <div id="quiz" class="hide">
-                <div id="question">Questions</div>
-                <h2 id="timer">00:00</h2>
-
-                <!--Adding in the Art Questions-->
-                <!--Adding in some buttons for questions-->
-                <div id="answer-btns">
-                    <button onclick="myStopFunction() " class="btn">Answer 1 </button>
-                    <button onclick="myStopFunction()" class="btn">Answer 2 </button>
-                    <button onclick="myStopFunction()" class="btn">Answer 3 </button>
-                    <button onclick="myStopFunction()" class="btn">Answer 4 </button>
+        <!--Adding in start and end buttons-->
+        <div class="controls">
+            <button id="start-btn">Start Art Quiz!</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+        <!--Introduction to the game-->
+        <div id="intro">
+            <div id="instruct_title">Welcome to myArt Quiz!
+                <spam>Here are some rules</spam>
+                <div id="intro_list">
+                    <div class = "info">1. You will only have 10 seconds for each question.</div>
+                    <div class = "info">2. Once you've chosen your answer, you cannot change it.</div>
+                    <div class = "info">3. You won't be able to quit the game once activated</div>
+                    <div class = "info">4. You will get points depending on how many you get correct.</div>
+                    <div class = "info">5. Most importantly, good luck and have fun!</div>
                 </div>
             </div>
+        </div>
 
-            <!--Adding in start and end buttons-->
-            <div class="controls">
-                <button id="start-btn">Start</button>
-                <button id="next-btn" class="next-btn btn hide">Next</button>
+        <div id="quiz" class="hide">
+            <div id="question">Questions</div>
+            <h2 id="timer">00:00</h2>
+
+            <!--Adding in the Art Questions-->
+            <!--Adding in some buttons for questions-->
+            <div id="answer-btns">
+                <button onclick="myStopFunction() " class="btn">Answer 1 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 2 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 3 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 4 </button>
             </div>
+        </div>
+
+
         </div>
 
     </section>

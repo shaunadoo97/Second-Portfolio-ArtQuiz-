@@ -92,11 +92,14 @@ body {
 }
 
 #start-btn {
+    position: absolute;
+    top:50%;
+    left:40%;
     background: rgb(91, 148, 233);
     color: white;
     padding: 12px 25px;
     border-radius: 20px;
-    font-size: 20PX;
+    font-size: 40px;
     transition: all 0.3s;
     cursor: pointer;
     color: black;
