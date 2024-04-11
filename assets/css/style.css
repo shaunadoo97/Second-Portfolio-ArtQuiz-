@@ -105,7 +105,7 @@ body {
 /**Styling the quiz**/
 .quiz_box {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 32%;
     width: 450px;
     background-color: white;
@@ -113,6 +113,8 @@ body {
 }
 
 .quiz_box header {
+    position: relative;
+    z-index: 99;
     height:60px;
     padding: 15px;
     background-color: white;
@@ -136,8 +138,79 @@ body {
     border: 3px solid rgb(91, 148, 233);
     border-radius: 20px;
     padding: 0 10px;
+    background-color:rgb(145, 189, 255) ;
 }
 
+.timer-sec {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.quiz_box section {
+    padding: 25px;
+}
+
+#questions {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.option-list {
+    padding: 25px;
+}
+
+.ans {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 20PX;
+    cursor: pointer;
+}
+
+.option-list .ans:last-child{
+    margin-bottom: 0px;
+}
+
+.quiz_box footer {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.quiz_box footer .total-ques span{
+    display: flex;
+    user-select: none;
+}
+
+.quiz_box footer .total-ques span p {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.quiz_box footer .total-ques span p:first-child{
+    padding-left: 0px;
+}
+
+footer .next-btn {
+    background: rgb(91, 148, 233);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 17px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: black;
+    margin-right: 10px;
+}
+
+
+footer .next-btn:hover {
+    background: rgb(47, 83, 138);
+    color: white;
+}
 
 .hide {
     display: none;
@@ -184,22 +257,6 @@ body {
 
 }
 
-#next-btn {
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 7px;
-    border-radius: 20px;
-    font-size: 17px;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-    margin-right: 10px;
-}
-
-#next-btn:hover {
-    background: rgb(47, 83, 138);
-    color: white;
-}
 
 #start-btn:hover {
     background: rgb(47, 83, 138);
