@@ -1,103 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Art Quiz!</title>
 </head>
-
-
-<!--Start of the Quiz-->
-
+<!--Start of the html quiz-->
 <body>
-    <section>
-        <!--Adding in start and end buttons-->
-        <div>
-            <button id="start-btn">Start Art Quiz!</button></div>
-        <!--Introduction to the game-->
+    <div id="app-container">
+        <h1>Welcome to my Art Quiz!</h1>
         <div id="intro">
-            <div id="instruct_title">Welcome to my Art Quiz!
+        <h2>Introductions</h2>
+        <p id="instruct">There are 10 questions in this quiz in relations to Art. You will have 10 seconds to answer before the time runs out, if the time is up, game over! 
+            Click the start button below to start the game. Best of luck!
+        </p>    
+        </div>
+
+        <div id="quiz" class= "hide">
+            <div id="question">Questions</div>
+            <h2 id="timer"></h2>
+            <h2 id="timer">00:00</h2>
+            <!--Adding in some buttons for questions-->
+            <div id="answer-btns">
+                <button onclick="myStopFunction() " class="btn">Answer 1 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 2 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 3 </button>
+                <button onclick="myStopFunction()" class="btn">Answer 4 </button>
             </div>
-            <div id=>Rules</div>
-            <div id="intro_list">
-                <div class="info">1. You will only have 10 seconds for each question.</div>
-                <div class="info">2. Once you've chosen your answer, you cannot change it.</div>
-                <div class="info">3. You won't be able to quit the game once activated</div>
-                <div class="info">4. You will get points depending on how many you get correct.</div>
-                <div class="info">5. Most importantly, good luck and have fun!</div>
-            </div>
+        </div>
+<!--Adding in start and end buttons-->
             <div class="controls">
-                <button id="quit">Exit Game</button>
-                <button id="reset">Continue</button>
-            </div>
+                <button id="start-btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
-
-        <!--Adding in the Art Questions-->
-        <!--Adding in some buttons for questions-->
-        <div class="quiz_box">
-            <header>
-                <div id="title">Art Quiz</div>
-                <div id="timer">
-                    <div class="time-text">Time Left</div>
-                    <div class="timer-sec">10</div>
-                </div>
-            </header>
-            <section>
-                <div id="questions">
-                    <span>What is 2 + 2?</span>
-                </div>
-                <div class="option-list">
-                    <div class="ans">
-                        <span>3</span>
-                    </div>
-                    <div class="ans">
-                        <span>4</span>
-                    </div>
-                    <div class="ans">
-                        <span>5</span>
-                    </div>
-                    <div class="ans">
-                        <span>1</span>
-                    </div>
-                </div>
-
-            </section>
-
-            <!--Quiz Footer-->
-            <footer>
-                <div class="total-ques">
-                    <span>
-                        <p>2</p>of<p>10</p>Questions
-                    </span>
-                </div>
-                <button class="next-btn">Next</button>
-                </div>
-            </footer>
-        </div>
-
-            <!--Adding Result Box-->
-            <div class="result_box">
-                <div class="complete">You've Finished the Quiz!</div>
-                <div class="score">
-                    <span>Sorry you only got <p>2</p><p>out of</p>10<p</span>
-                </div>
-                <div class="btns">
-                    <button class="reset">Play Again</button>
-                    <button class="quit">Quit Game</button>
-                </div>
-            </div>
-    </section>
-
+    </div>
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -1,293 +1,135 @@
-/**Credits to Greattack from youtube for the style*/
 * {
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
 }
-
-
-
 body {
-    background-color: orange;
+background-color: orange;
 }
-
-
-
 /**Styling and making the quiz simple and basic as I want to focus on Javascript*/
 #test {
     color: black;
     text-align: center;
 }
-
-#intro {
-    display: none;
-    position: absolute;
-    top: 20%;
-    left: 32%;
-    width: 450px;
-    background-color: white;
+#app-container {
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto;
+    height: 700px;
     border-radius: 10px;
-}
-
-#instruct_title {
-    height: 70px;
-    width: 100%;
-    border-bottom: 1px solid rgb(91, 148, 233);
-    text-align: center;
-    display: flex;
-    justify-content: center;
     padding: 20px;
-    font-size: 30px;
-    font-weight: 700;
 }
-
-#rules {
-    font-size: 25px;
-    text-align: center;
-    font-weight: 400;
-}
-
-#intro_list {
-    padding: 30px;
-    font-size: 15px;
-}
-
-.info {
-    margin: 5px;
-}
-
-.controls {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
+#instruct {
     padding: 10px;
-    font-size: 20px;
-    border-top: 1px solid rgb(91, 148, 233);
-}
-
-#quit {
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 7px;
-    border-radius: 20px;
-    font-size: 17px;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-    margin-right: 10px;
-}
-
-#quit:hover {
-    background:white; 
-    color: rgb(47, 83, 138);
-    
-}
-
-#reset {
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 7px;
-    border-radius: 20px;
-    font-size: 17px;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-    margin-left: 10px;
-}
-
-#reset:hover {
-    background: rgb(47, 83, 138);
-    color: white;
-}
-
-/**Styling the quiz**/
-.quiz_box {
-   
-    position: absolute;
-    top: 10%;
-    left: 32%;
-    width: 450px;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.quiz_box header {
-    position: relative;
-    z-index: 99;
-    height:60px;
-    padding: 15px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 5px;
-    box-shadow: 0px 1px 20px 1px rgb(47, 83, 138);
-}
-
-#title {
-    font-size: 30px;
-}
-
-#timer {
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    width:120px;
-    height: 50px;
-    border: 3px solid rgb(91, 148, 233);
-    border-radius: 20px;
-    padding: 0 10px;
-    background-color:rgb(145, 189, 255) ;
-}
-
-.timer-sec {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.quiz_box section {
-    padding: 25px;
-}
-
-#questions {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.option-list {
-    padding: 25px;
-}
-
-.ans {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 25px;
-    padding: 10px;
-    margin-bottom: 20PX;
-    cursor: pointer;
-}
-
-.option-list .ans:last-child{
-    margin-bottom: 0px;
-}
-
-.quiz_box footer {
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-.quiz_box footer .total-ques span{
-    display: flex;
-    user-select: none;
-}
-
-.quiz_box footer .total-ques span p {
-    font-weight: bold;
-    padding: 0 10px;
-}
-
-.quiz_box footer .total-ques span p:first-child{
-    padding-left: 0px;
-}
-
-footer .next-btn {
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 7px;
-    border-radius: 20px;
-    font-size: 17px;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-    margin-right: 10px;
-}
-
-footer .next-btn:hover {
-    background: rgb(47, 83, 138);
-    color: white;
-}
-
-.result_box {
-    background-color: white;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    width: 450px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 25px;
-    width:500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+    font-size: 220%;
     text-align: center;
+}
+#quiz{
+    padding: 20px;
+}
+.quiz h2 {
+    font-size: 40px;
+}
+#question {
+    font-size: 200%;
+}
+.hide {
     display: none;
 }
-
-.result_box .complete {
-    font-weight: bold;
-    font-size: 22px;
+.btn {
+    color:black;
+    font-weight: 300;
+    width: 80%;
+    border: 2px solid black;
+    padding: 10px  20px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
-
-.result_box .score span {
-    display: flex;
-    font-size: 15px;
-    margin: 15px 0;
+.btn.correct {
+    background-color: rgb(34, 211, 34);
+    color: black
 }
-
-.score span p {
-    padding: 0 5px;
+.btn.wrong {
+   background-color: rgb(209, 80, 80);
+   color: white;
 }
-
-.result_box .btns {
-    display: flex;
-    margin: 25px 0px;
-}
-
-.result_box .btns button {
-    margin: 0 12px;
-    padding:12px;
-}
-.reset {
-    background: rgb(91, 148, 233);
+#next-btn {
+    width: 100px;
+    background: rgb(91, 148, 233) ;
     color: white;
-    padding: 7px;
+    padding: 12px 25px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 20PX;
     transition: all 0.3s;
     cursor: pointer;
     color: black;
+   
 }
-
-.reset:hover {
-    background: rgb(47, 83, 138);
+#start-btn {
+    background: rgb(91, 148, 233) ;
     color: white;
-}
-
-.quit {
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 7px;
+    padding: 12px 25px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 20PX;
     transition: all 0.3s;
     cursor: pointer;
     color: black;
+   
 }
-.quit:hover {
+#next-btn:hover {
     background: rgb(47, 83, 138);
     color: white;
 }
+#start-btn:hover  {
+    background: rgb(47, 83, 138);
+    color:white;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 576px) {
+   app-container {
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+.h1, h1 {
+    font-size: 20px;
+    text-align: center;
+}
+#instruct {
+    font-size: 120%;
+}
 
-
+#question {
+    font-size: 130%;
+}
 
 .btn {
+    width: 110%;
+}
+   }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+ #app-container {
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    margin: 150px auto;
+    height: 700px;
+    border-radius: 10px;
+    padding: 20px;
+ }
+ .btn {
     color: black;
     font-weight: 300;
     width: 80%;
@@ -298,94 +140,6 @@ footer .next-btn:hover {
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
-}
-
-/**Indicating to show whether the questions were correct or wrong, green for right, red for wrong.**/
-.btn.correct {
-    background-color: rgb(34, 211, 34);
-    color: black
-}
-
-.btn.wrong {
-    background-color: rgb(209, 80, 80);
-    color: white;
-}
-
-
-#start-btn {
-    position: absolute;
-    top: 40%;
-    left: 38%;
-    background: rgb(91, 148, 233);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-size: 40px;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
-
-}
-
-
-#start-btn:hover {
-    background: rgb(47, 83, 138);
-    color: white;
-}
-
-
-/**Making sure the site is responsive**/
-@media screen and (max-width: 576px) {
-    app-container {
-        background: white;
-        width: 80%;
-        max-width: 600px;
-        margin: 100px auto;
-        border-radius: 10px;
-        padding: 20px;
-    }
-
-    .h1,
-    h1 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    #instruct {
-        font-size: 120%;
-    }
-
-    #question {
-        font-size: 120%;
-    }
-
-    .btn {
-        width: 110%;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    #app-container {
-        background: white;
-        width: 80%;
-        max-width: 600px;
-        margin: 150px auto;
-        height: 700px;
-        border-radius: 10px;
-        padding: 20px;
-    }
-
-    .btn {
-        color: black;
-        font-weight: 300;
-        width: 80%;
-        border: 2px solid black;
-        padding: 10px 20px;
-        margin: 10px 0;
-        text-align: left;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: all 0.3s;
-        font-size: 200%;
-    }
+    font-size: 200%;
+ }
 }
