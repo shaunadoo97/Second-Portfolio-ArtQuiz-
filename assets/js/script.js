@@ -5,18 +5,21 @@ const startTest = document.getElementById('intro');
 const questionContainerElement = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-btns');
+const timeCount = document.getElementById("count_down")
 
 document.addEventListener("DOMContentLoaded", startButton);
 
 let shuffledQuestions, currentQuestionIndex;
 let scoreCounter = 1;
 let score = 1;
+let timerInterval;
+let counter;
 
 startButton.addEventListener('click', gameStart);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
+    clearInterval(timerInterval)
     setNextQuestion();
-    userScore();
 });
 
 /**Starting game function */
@@ -27,6 +30,7 @@ function gameStart() {
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
+    startTimer(10);
 
 }
 
@@ -93,6 +97,16 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
+}
+
+
+function startTimer(time) {
+    counter = setInterval(timer, 1000)
+function timer() {
+    timeCount.textContent = time;
+    time--;
+}
+
 }
 
 /**Adding in the Art Questions */
@@ -314,24 +328,3 @@ const questions = [{
 
 
 ];
-/**Setting timer for Time runs out, need to come back and work on this. 
- * Reference from W3 schools */
-const myTimeout = setTimeout(gameOver, 10000);
-
-function gameOver() {
-    document.getElementById("timer").innerHTML = "Time ran out!";
-}
-
-function myStopFunction() {
-    clearTimeout(myTimeout);
-}
-
-/**Adding in Score suggested by my Mentor */
-function userScore() {
-    if (selectAnswer === 'correct') {
-        scoreCounter++;
-        scoreCounterElement.innerText = +score;
-    }
-    console.log('Increased Score by 1');
-
-}
