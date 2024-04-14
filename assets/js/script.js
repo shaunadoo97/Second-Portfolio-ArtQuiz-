@@ -14,6 +14,7 @@ let scoreCounter = 1;
 let score = 1;
 let timerInterval;
 let counter;
+let timeValue = 10;
 
 startButton.addEventListener('click', gameStart);
 nextButton.addEventListener('click', () => {
@@ -30,14 +31,14 @@ function gameStart() {
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
-    startTimer(10);
 
 }
 
 function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
-
+    clearInterval(counter);
+    startTimer(timeValue);
 }
 
 function showQuestion(question) {
@@ -68,6 +69,7 @@ function resetState() {
 
 
 function selectAnswer(e) {
+    clearInterval(counter);
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
     setStatusClass(document.body, correct);
@@ -105,6 +107,14 @@ function startTimer(time) {
 function timer() {
     timeCount.textContent = time;
     time--;
+    if(time < 9){
+        let addZero = timeCount.textContent;
+        timeCount.textContent = "0" + addZero;
+    }
+    if (time < 0) {
+        clearInterval(counter);
+        timeCount.textContent = "00";
+    }
 }
 
 }
