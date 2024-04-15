@@ -15,6 +15,8 @@ let score = 1;
 let timerInterval;
 let counter;
 let timeValue = 10;
+let que_count = 1
+let que_num = 0;
 
 startButton.addEventListener('click', gameStart);
 nextButton.addEventListener('click', () => {
@@ -40,7 +42,16 @@ function setNextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex]);
     clearInterval(counter);
     startTimer(timeValue);
+    /**To make sure the quiz stops at 10 */
+    if (que_num < 10) { 
+        que_num++;
+        queCounter(); 
+    } else if (que_num === 10) { 
+        console.log("Questions Completed");
+        return; 
+    }
 }
+
 
 /**Displaying questions*/
 function showQuestion(question) {
@@ -55,6 +66,14 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
     });
+}
+
+
+
+function queCounter() {
+    let bottom_que_count = document.getElementById("total_que")
+    let totalQuesCountTag = '<span><p>' + que_num + '</p>of<p>' + shuffledQuestions.length +'</p>Questions</span>';
+    bottom_que_count.innerHTML = totalQuesCountTag;
 }
 
 function resetState() {
@@ -106,31 +125,32 @@ function clearStatusClass(element) {
 /**Timer function */
 function startTimer(time) {
     counter = setInterval(timer, 1000)
-function timer() {
-    timeCount.textContent = time;
-    time--;
-    if(time < 9){
-        let addZero = timeCount.textContent;
-        timeCount.textContent = "0" + addZero;
-    }
-    if (time < 0) {
-        clearInterval(counter);
-        timeCount.textContent = "00";
-        correctAns()
-    }
-}
 
-/**Reveal answer when timer is up*/
-function correctAns() {
-    const correctBtn = Array.from(answerButtonsElement.children).find(button => button.dataset.correct === 'true');
-    if (correctBtn) {
-        setStatusClass(correctBtn, true);
+    function timer() {
+        timeCount.textContent = time;
+        time--;
+        if (time < 9) {
+            let addZero = timeCount.textContent;
+            timeCount.textContent = "0" + addZero;
+        }
+        if (time < 0) {
+            clearInterval(counter);
+            timeCount.textContent = "00";
+            correctAns()
+        }
     }
-    Array.from(answerButtonsElement.children).forEach(button => {
-        button.removeEventListener("click", selectAnswer);
-    });
-    nextButton.classList.remove("hide")
-}
+
+    /**Reveal answer when timer is up*/
+    function correctAns() {
+        const correctBtn = Array.from(answerButtonsElement.children).find(button => button.dataset.correct === 'true');
+        if (correctBtn) {
+            setStatusClass(correctBtn, true);
+        }
+        Array.from(answerButtonsElement.children).forEach(button => {
+            button.removeEventListener("click", selectAnswer);
+        });
+        nextButton.classList.remove("hide")
+    }
 
 }
 

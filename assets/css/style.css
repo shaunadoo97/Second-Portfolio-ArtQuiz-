@@ -101,6 +101,8 @@ background-color: orange;
 
 #total_que span p {
     font-weight: bold;
+    padding: 0 12px;
+    
 }
 
 @media screen and (max-width: 576px) {
