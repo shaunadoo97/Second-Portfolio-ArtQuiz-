@@ -27,12 +27,16 @@ nextButton.addEventListener('click', () => {
 
 /**Starting game function */
 function gameStart() {
+   
     startTest.classList.add('hide');
     startButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
-    setNextQuestion();
+    setNextQuestion(); 
+    if (que_num === 10) {
+        resetQuiz();
+    }
 
 }
 
@@ -153,6 +157,16 @@ function startTimer(time) {
     }
 
 }
+
+function resetQuiz() {
+        clearInterval(counter);
+        currentQuestionIndex = 0;
+        que_num = 0;
+        resetState();
+        timeCount.textContent = "00";
+        startButton.innerText = "Start"; // Change button text back to "Start"
+        startButton.classList.remove("hide");
+    }
 
 /**Adding in the Art Questions */
 const questions = [{
