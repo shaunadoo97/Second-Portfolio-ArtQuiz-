@@ -93,6 +93,16 @@ background-color: orange;
     justify-content: center;
     align-items: center;
 }
+
+#total_que span {
+    display: flex;
+
+}
+
+#total_que span p {
+    font-weight: bold;
+}
+
 @media screen and (max-width: 576px) {
    app-container {
     background: white;

@@ -34,6 +34,7 @@ function gameStart() {
 
 }
 
+/**Getting Next function */
 function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
@@ -41,6 +42,7 @@ function setNextQuestion() {
     startTimer(timeValue);
 }
 
+/**Displaying questions*/
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -67,7 +69,7 @@ function resetState() {
     }
 }
 
-
+/**Selecting answer to reveal correct/wrong questions */
 function selectAnswer(e) {
     clearInterval(counter);
     const selectedButton = e.target;
@@ -101,7 +103,7 @@ function clearStatusClass(element) {
     element.classList.remove('wrong');
 }
 
-
+/**Timer function */
 function startTimer(time) {
     counter = setInterval(timer, 1000)
 function timer() {
@@ -114,7 +116,20 @@ function timer() {
     if (time < 0) {
         clearInterval(counter);
         timeCount.textContent = "00";
+        correctAns()
     }
+}
+
+/**Reveal answer when timer is up*/
+function correctAns() {
+    const correctBtn = Array.from(answerButtonsElement.children).find(button => button.dataset.correct === 'true');
+    if (correctBtn) {
+        setStatusClass(correctBtn, true);
+    }
+    Array.from(answerButtonsElement.children).forEach(button => {
+        button.removeEventListener("click", selectAnswer);
+    });
+    nextButton.classList.remove("hide")
 }
 
 }
