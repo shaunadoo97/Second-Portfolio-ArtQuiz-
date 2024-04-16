@@ -1,5 +1,6 @@
 /**Credits to Web Dev for javascript and functionality of my quiz game*/
-const startButton = document.getElementById('start-btn');
+/**Credits to CodeNepal For Main game */
+const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById('next-btn');
 const startTest = document.getElementById('intro');
 const questionContainerElement = document.getElementById('quiz');
@@ -19,9 +20,9 @@ let que_count = 1
 let que_num = 0;
 let userScore = 0;
 
-const resultBox = document.getElementById("result_box")
-const restartQuiz = document.getElementById("restart")
-const leaveGame = document.getElementById("leave")
+const resultBox = document.getElementById("result_box");
+const restartQuiz = document.getElementById("restart");
+const leaveGame = document.getElementById("leave");
 
 
 startButton.addEventListener('click', gameStart);
@@ -33,15 +34,15 @@ nextButton.addEventListener('click', () => {
 
 /**Starting game function */
 function gameStart() {
-   
+
     startTest.classList.add('hide');
     startButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
-    setNextQuestion(); 
+    setNextQuestion();
     if (que_num === 10) {
-       showResultBox();
+        showResultBox();
     }
 
 }
@@ -53,13 +54,12 @@ function setNextQuestion() {
     clearInterval(counter);
     startTimer(timeValue);
     /**To make sure the quiz stops at 10 */
-    if (que_num < 10) { 
+    if (que_num < 10) {
         que_num++;
-        queCounter(); 
-        showResultBox();
-    } else if (que_num === 10) { 
+        queCounter();
+    } else if (que_num === 10) {
         console.log("Questions Completed");
-        return; 
+        showResultBox();
     }
 }
 
@@ -82,7 +82,7 @@ function showQuestion(question) {
 /**To display how many questions have been answered. */
 function queCounter() {
     let bottom_que_count = document.getElementById("total_que")
-    let totalQuesCountTag = '<span><p>' + que_num + '</p>of<p>' + shuffledQuestions.length +'</p>Questions</span>';
+    let totalQuesCountTag = '<span><p>' + que_num + '</p>of<p>' + shuffledQuestions.length + '</p>Questions</span>';
     bottom_que_count.innerHTML = totalQuesCountTag;
 }
 
@@ -134,29 +134,27 @@ function clearStatusClass(element) {
 }
 
 /**Showing the Result Box*/
-function showResultBox(){
+function showResultBox() {
     startTest.classList.remove("hide");
     startButton.classList.remove("hide");
     resultBox.classList.add("hide")
     const scoreText = resultBox
-    if( userScore > 7) {
+    
+/**Message for the User */
+    if (userScore > 7) {
         let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
-    }
-    else if( userScore > 5) {
+    } else if (userScore > 5) {
         let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
-    }
-    else if( userScore > 3) {
+    } else if (userScore > 3) {
+        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    } else {
         let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     }
-    
-    else{
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
-    
+
 }
 
 /**Timer function */
@@ -170,6 +168,7 @@ function startTimer(time) {
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero;
         }
+/**To Reveal answer when Time is up. */
         if (time < 0) {
             clearInterval(counter);
             timeCount.textContent = "00";
@@ -177,7 +176,6 @@ function startTimer(time) {
         }
     }
 
-    /**Reveal answer when timer is up*/
     function correctAns() {
         const correctBtn = Array.from(answerButtonsElement.children).find(button => button.dataset.correct === 'true');
         if (correctBtn) {
@@ -192,14 +190,15 @@ function startTimer(time) {
 }
 
 function resetQuiz() {
-        clearInterval(counter);
-        currentQuestionIndex = 0;
-        que_num = 0;
-        resetState();
-        timeCount.textContent = "00";
-        startButton.innerText = "Start"; // Change button text back to "Start"
-        startButton.classList.remove("hide");
-    }
+    clearInterval(counter);
+    currentQuestionIndex = 0;
+    que_num = 0;
+    resetState();
+    timeCount.textContent = "00";
+    startButton.innerText = "Start"; 
+    startButton.classList.remove("hide");
+}
+
 
 /**Adding in the Art Questions */
 const questions = [{
