@@ -56,6 +56,7 @@ function setNextQuestion() {
     if (que_num < 10) { 
         que_num++;
         queCounter(); 
+        showResultBox();
     } else if (que_num === 10) { 
         console.log("Questions Completed");
         return; 
