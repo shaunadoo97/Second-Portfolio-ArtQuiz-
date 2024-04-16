@@ -17,6 +17,12 @@ let counter;
 let timeValue = 10;
 let que_count = 1
 let que_num = 0;
+let userScore = 0;
+
+const resultBox = document.getElementById("result_box")
+const restartQuiz = document.getElementById("restart")
+const leaveGame = document.getElementById("leave")
+
 
 startButton.addEventListener('click', gameStart);
 nextButton.addEventListener('click', () => {
@@ -52,6 +58,7 @@ function setNextQuestion() {
         queCounter(); 
     } else if (que_num === 10) { 
         console.log("Questions Completed");
+        showResultBox();
         return; 
     }
 }
@@ -115,7 +122,6 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
-
         element.classList.add("correct");
     } else {
         element.classList.add("wrong");
@@ -125,6 +131,27 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
+}
+
+/**Showing the Result Box*/
+function  showResultBox(){
+    startTest.classList.remove('hide');
+    startButton.classList.remove('hide');
+    resultBox.classList.add("hide")
+    const scoreText = resultBox
+    if( userScore > 3) {
+        let scoreTag = "<span> sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    }
+    else if( userScore > 5) {
+        let scoreTag = "<span> sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    }
+    else if( userScore > 5) {
+        let scoreTag = "<span> sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    }
+    
 }
 
 /**Timer function */
