@@ -72,8 +72,7 @@ function showQuestion(question) {
     });
 }
 
-
-
+/**To display how many questions have been answered. */
 function queCounter() {
     let bottom_que_count = document.getElementById("total_que")
     let totalQuesCountTag = '<span><p>' + que_num + '</p>of<p>' + shuffledQuestions.length +'</p>Questions</span>';
@@ -91,6 +90,8 @@ function resetState() {
         alert(err.message);
     }
 }
+
+let correctAnswers = 0;
 
 /**Selecting answer to reveal correct/wrong questions */
 function selectAnswer(e) {
