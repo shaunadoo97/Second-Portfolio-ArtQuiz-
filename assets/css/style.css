@@ -19,6 +19,7 @@ background-color: orange;
     height: 700px;
     border-radius: 10px;
     padding: 20px;
+    display: none;
 }
 #instruct {
     padding: 10px;
@@ -74,7 +75,7 @@ background-color: orange;
     color: white;
     padding: 12px 25px;
     border-radius: 20px;
-    font-size: 20PX;
+    font-size: 20px;
     transition: all 0.3s;
     cursor: pointer;
     color: black;
@@ -103,6 +104,47 @@ background-color: orange;
     font-weight: bold;
     padding: 0 12px;
     
+}
+
+/**Result box*/
+#result_box {
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto;
+    height: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#complete_text {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#score_test {
+    text-align: center;
+    font-size: 120%;
+}
+
+#score_test span p{
+    font-weight: bolder;
+}
+
+#end_buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+#end_buttons button {
+    margin: 0 5px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 576px) {
