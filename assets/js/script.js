@@ -41,7 +41,7 @@ function gameStart() {
     questionContainerElement.classList.remove('hide');
     setNextQuestion(); 
     if (que_num === 10) {
-        resetQuiz();
+       showResultBox();
     }
 
 }
@@ -58,7 +58,6 @@ function setNextQuestion() {
         queCounter(); 
     } else if (que_num === 10) { 
         console.log("Questions Completed");
-        showResultBox();
         return; 
     }
 }
@@ -113,7 +112,7 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     } else {
-        startButton.innerText = "Restart";
+        startButton.innerText = "Results";
         startButton.classList.remove("hide");
     }
 
@@ -134,21 +133,26 @@ function clearStatusClass(element) {
 }
 
 /**Showing the Result Box*/
-function  showResultBox(){
-    startTest.classList.remove('hide');
-    startButton.classList.remove('hide');
+function showResultBox(){
+    startTest.classList.remove("hide");
+    startButton.classList.remove("hide");
     resultBox.classList.add("hide")
     const scoreText = resultBox
-    if( userScore > 3) {
-        let scoreTag = "<span> sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+    if( userScore > 7) {
+        let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     }
     else if( userScore > 5) {
-        let scoreTag = "<span> sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     }
-    else if( userScore > 5) {
-        let scoreTag = "<span> sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+    else if( userScore > 3) {
+        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    }
+    
+    else{
+        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     }
     
