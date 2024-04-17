@@ -51,11 +51,11 @@ background-color: orange;
     cursor: pointer;
     transition: all 0.3s;
 }
-.btn.correct {
+.correct {
     background-color: rgb(34, 211, 34);
     color: black
 }
-.btn.wrong {
+.wrong {
    background-color: rgb(209, 80, 80);
    color: white;
 }
