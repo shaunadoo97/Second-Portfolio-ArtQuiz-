@@ -1,203 +1,30 @@
-/**Credits to Web Dev for javascript and functionality of my quiz game*/
-/**Credits to CodeNepal For Main game */
-const startButton = document.getElementById("start-btn");
-const nextButton = document.getElementById('next-btn');
-const startTest = document.getElementById('intro');
-const questionContainerElement = document.getElementById('quiz');
-const questionElement = document.getElementById('question');
-const answerButtonsElement = document.getElementById('answer-btns');
-const timeCount = document.getElementById("count_down")
+const questionElement = document.getElementById("question");
+const answerElement = document.getElementById("answer-btns");
+const nextButton = document.getElementById("next-btn");
 
-document.addEventListener("DOMContentLoaded", startButton);
+let currentQuestionIndex = 0;
+let score = 0;
 
-let shuffledQuestions, currentQuestionIndex;
-let scoreCounter = 1;
-let score = 1;
-let timerInterval;
-let counter;
-let timeValue = 10;
-let que_count = 1
-let que_num = 0;
-let userScore = 0;
-
-const resultBox = document.getElementById("result_box");
-const restartQuiz = document.getElementById("restart");
-const leaveGame = document.getElementById("leave");
-
-
-startButton.addEventListener('click', gameStart);
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    clearInterval(timerInterval)
-    setNextQuestion();
-});
-
-/**Starting game function */
-function gameStart() {
-
-    startTest.classList.add('hide');
-    startButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+function gameStart(){
     currentQuestionIndex = 0;
-    questionContainerElement.classList.remove('hide');
-    setNextQuestion();
-    if (que_num === 10) {
-        showResultBox();
-    }
-
+    score = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
 }
 
-/**Getting Next function */
-function setNextQuestion() {
-    resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-    clearInterval(counter);
-    startTimer(timeValue);
-    /**To make sure the quiz stops at 10 */
-    if (que_num < 10) {
-        que_num++;
-        queCounter();
-    } else if (que_num === 10) {
-        console.log("Questions Completed");
-        showResultBox();
-    }
-}
+function showQuestion(){
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". " + currentQuestionIndex.question;
 
-
-/**Displaying questions*/
-function showQuestion(question) {
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerElement.appendChild(button);
     });
 }
 
-/**To display how many questions have been answered. */
-function queCounter() {
-    let bottom_que_count = document.getElementById("total_que")
-    let totalQuesCountTag = '<span><p>' + que_num + '</p>of<p>' + shuffledQuestions.length + '</p>Questions</span>';
-    bottom_que_count.innerHTML = totalQuesCountTag;
-}
-
-function resetState() {
-    try {
-        clearStatusClass(document.body);
-        nextButton.classList.add('hide');
-        while (answerButtonsElement.firstChild) {
-            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-        }
-    } catch (err) {
-        alert(err.message);
-    }
-}
-
-let correctAnswers = 0;
-
-/**Selecting answer to reveal correct/wrong questions */
-function selectAnswer(e) {
-    clearInterval(counter);
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        button.removeEventListener("click", selectAnswer);
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
-    } else {
-        startButton.innerText = "Results";
-        startButton.classList.remove("hide");
-    }
-
-}
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element);
-    if (correct) {
-        element.classList.add("correct");
-    } else {
-        element.classList.add("wrong");
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
-}
-
-/**Showing the Result Box*/
-function showResultBox() {
-    startTest.classList.remove("hide");
-    startButton.classList.remove("hide");
-    resultBox.classList.add("hide")
-    const scoreText = resultBox
-    
-/**Message for the User */
-    if (userScore > 7) {
-        let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    } else if (userScore > 5) {
-        let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    } else if (userScore > 3) {
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    } else {
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
-
-}
-
-/**Timer function */
-function startTimer(time) {
-    counter = setInterval(timer, 1000)
-
-    function timer() {
-        timeCount.textContent = time;
-        time--;
-        if (time < 9) {
-            let addZero = timeCount.textContent;
-            timeCount.textContent = "0" + addZero;
-        }
-/**To Reveal answer when Time is up. */
-        if (time < 0) {
-            clearInterval(counter);
-            timeCount.textContent = "00";
-            correctAns()
-        }
-    }
-
-    function correctAns() {
-        const correctBtn = Array.from(answerButtonsElement.children).find(button => button.dataset.correct === 'true');
-        if (correctBtn) {
-            setStatusClass(correctBtn, true);
-        }
-        Array.from(answerButtonsElement.children).forEach(button => {
-            button.removeEventListener("click", selectAnswer);
-        });
-        nextButton.classList.remove("hide")
-    }
-
-}
-
-function resetQuiz() {
-    clearInterval(counter);
-    currentQuestionIndex = 0;
-    que_num = 0;
-    resetState();
-    timeCount.textContent = "00";
-    startButton.innerText = "Start"; 
-    startButton.classList.remove("hide");
-}
 
 
 /**Adding in the Art Questions */
@@ -332,22 +159,11 @@ const questions = [{
     },
     {
         question: 'Who painted "Starry Night," a famous depiction of swirling stars and a bright crescent moon?',
-        answers: [{
-                text: 'Salvador Dalí',
-                correct: false
-            },
-            {
-                text: 'Jeff Koons',
-                correct: false
-            },
-            {
-                text: 'Pablo Picasso',
-                correct: false
-            },
-            {
-                text: 'Vincent Van Gogh',
-                correct: true
-            },
+        answers: [
+            { text: 'Salvador Dalí', correct: false},
+            { text: 'Jeff Koons', correct: false},
+            { text: 'Pablo Picasso',correct: false},
+            { text: 'Vincent Van Gogh',correct: true},
         ]
 
     },
@@ -419,3 +235,5 @@ const questions = [{
 
 
 ];
+
+gameStart();
