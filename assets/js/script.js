@@ -32,9 +32,13 @@ function showQuestion() {
 }
 
 function resetState() {
-    nextButton.style.display = "none"
+    try {
+       nextButton.style.display = "none"
     while (answerElement.firstChild) {
         answerElement.removeChild(answerElement.firstChild);
+        }  
+    } catch (err) {
+        alert(err.message);
     }
 }
 
