@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +11,19 @@
     <title>Art Quiz!</title>
 </head>
 <!--Start of the html quiz-->
-
 <body>
     <div id="app-container">
+        <h1>Welcome to my Art Quiz!</h1>
+        <div id="intro">
+        <h2>Introductions</h2>
+        <p id="instruct">There are 10 questions in this quiz in relations to Art. You will have 10 seconds to answer before the time runs out, if the time is up, game over! 
+            Click the start button below to start the game. Best of luck!
+        </p>    
+        </div>
 
-        <div id="quiz">
-            <h2 id="question">Question</h2>
-            <h2 id="timer">Time Left:</h2>
+        <div id="quiz" class= "hide">
+            <div id="question">Questions</div>
+            <h2 id="timer"></h2>
             <h2 id="count_down">10</h2>
             <!--Adding in some buttons for questions-->
             <div id="answer-btns">
@@ -27,20 +32,23 @@
                 <button class="btn">Answer 3 </button>
                 <button class="btn">Answer 4 </button>
             </div>
-            <button id="next-btn">Next</button>
+            <div id="total_que">
+                <!--span><p>2</p>of<p>5</p>Questions</span-->
+            </div>
         </div>
-
+        
         <!--Adding in start and end buttons-->
-
+            <div class="controls">
+                <button id="start-btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
     </div>
 
     <!--Result Box-->
-    <div id="result_box">
+    <div id="result_box" class="hide">
         <div id="complete_text">You've completed the Art Quiz!</div>
         <div id="score_test">
-            <span>And sorry, you only got <p>2</p> out of<p></p>
-                <p>10</p>
-            </span>
+            <span>And sorry, you only got <p>2</p> out of<p></p><p>10</p></span>
         </div>
         <div id="end_buttons">
             <button id="restart">Replay Quiz</button>
@@ -49,8 +57,5 @@
     </div>
 
     <script src="assets/js/script.js"></script>
-   
-
 </body>
-
 </html>

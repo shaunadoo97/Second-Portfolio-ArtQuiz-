@@ -19,7 +19,6 @@ background-color: orange;
     height: 700px;
     border-radius: 10px;
     padding: 20px;
-    
 }
 
 #instruct {
@@ -51,11 +50,11 @@ background-color: orange;
     cursor: pointer;
     transition: all 0.3s;
 }
-.correct {
+.btn.correct {
     background-color: rgb(34, 211, 34);
     color: black
 }
-.wrong {
+.btn.wrong {
    background-color: rgb(209, 80, 80);
    color: white;
 }
@@ -169,6 +168,33 @@ background-color: orange;
     background: rgb(47, 83, 138);
     color:white;
 }
+
+
+@media screen and (max-width: 576px) {
+   app-container {
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+.h1, h1 {
+    font-size: 20px;
+    text-align: center;
+}
+#instruct {
+    font-size: 120%;
+}
+
+#question {
+    font-size: 130%;
+}
+
+.btn {
+    width: 110%;
+}
+   }
 
 @media screen and (max-width: 576px) {
    app-container {
