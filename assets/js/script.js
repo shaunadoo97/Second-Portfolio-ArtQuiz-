@@ -6,6 +6,7 @@ const questionContainerElement = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-btns');
 const timeCount = document.getElementById("count_down")
+const overAll = document.getElementById("")
 
 document.addEventListener("DOMContentLoaded", startButton);
 
@@ -48,7 +49,7 @@ function setNextQuestion() {
             startTest.classList.remove("hide");
             showResults();
         }
-        que_count++; 
+        que_count++;
     } else {
         showResults();
     }
@@ -59,7 +60,8 @@ function setNextQuestion() {
 function showQuestion(question) {
     questionElement.innerText = question.question;
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + shuffledQuestions[currentQuestionIndex].question;
+    questionElement.innerHTML = questionNo + ". " + question.question;
+    answerButtonsElement.innerHTML = "";
     question.answers.forEach(answer => {
         const button = document.createElement('button');
         button.innerText = answer.text;
@@ -82,29 +84,33 @@ function showResults() {
     questionContainerElement.classList.add("hide");
     resultBox.classList.remove("hide");
     const scoreText = document.getElementById("score_test");
-   /**Message for the User */
-   if (userScore > 7) {
-    let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-    scoreText.innerHTML = scoreTag;
-} else if (userScore > 5) {
-    let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-    scoreText.innerHTML = scoreTag;
-} else if (userScore > 3) {
-    let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-    scoreText.innerHTML = scoreTag;
-} else {
-    let scoreTag = "<span> Sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-    scoreText.innerHTML = scoreTag;
-}
+
+    /**Message for the User */
+    if (userScore > 7) {
+        let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    } else if (userScore > 5) {
+        let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    } else if (userScore > 3) {
+        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    } else {
+        let scoreTag = "<span> Sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        scoreText.innerHTML = scoreTag;
+    }
     resetState();
 }
 
-restartQuiz.addEventListener('click', () => {
-    currentQuestionIndex++;
-    clearInterval(timerInterval)
-    setNextQuestion();
-});
+restartQuiz.onclick = () => {
+   resetQuiz()
 
+    
+}
+
+leaveGame.onclick = () => {
+    window.location.reload();
+}
 
 function resetState() {
     try {
@@ -129,7 +135,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         button.removeEventListener("click", selectAnswer);
         setStatusClass(button, button.dataset.correct);
-        
+
     });
     if (currentQuestionIndex < shuffledQuestions.length - 1) {
         nextButton.classList.remove('hide');
@@ -138,13 +144,14 @@ function selectAnswer(e) {
         startButton.classList.remove("hide");
     }
 }
+
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        userScore =+ 1;
+        userScore = +1;
         console.log(userScore);
-       
+
     } else {
         element.classList.add("wrong");
     }
@@ -192,7 +199,7 @@ function resetQuiz() {
     currentQuestionIndex = 0;
     resetState();
     timeCount.textContent = "00";
-    startButton.innerText = "Start"; // Change button text back to "Start"
+    startButton.innerText = "Start";
     startButton.classList.remove("hide");
 }
 
