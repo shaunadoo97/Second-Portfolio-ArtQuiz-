@@ -45,6 +45,7 @@ function setNextQuestion() {
             clearInterval(counter);
             startTimer(timeValue);
         } else {
+            startTest.classList.remove("hide");
             showResults();
         }
         que_count++; 
