@@ -103,9 +103,15 @@ function showResults() {
 }
 
 restartQuiz.onclick = () => {
-   resetQuiz()
-
-    
+   resultBox.classList.add("hide")
+   startTest.classList.remove("hide")
+   currentQuestionIndex = 0;
+   que_count = 0;
+   userScore = 0;
+   timeCount.textContent = 10;
+   clearInterval(counter);
+   resetState();
+   gameStart();
 }
 
 leaveGame.onclick = () => {
