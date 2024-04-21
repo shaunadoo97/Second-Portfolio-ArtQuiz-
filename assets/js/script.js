@@ -83,20 +83,6 @@ function showResults() {
     const scoreText = resultBox
     resetState();
     
-    /**Message for the User */
-    if (userScore > 7) {
-        let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    } else if (userScore > 5) {
-        let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    } else if (userScore > 3) {
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    } else {
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
 }
 
 function resetState() {
@@ -134,7 +120,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        userScore++
+       
     } else {
         element.classList.add("wrong");
     }
