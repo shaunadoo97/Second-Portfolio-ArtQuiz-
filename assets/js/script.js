@@ -80,10 +80,30 @@ const leaveGame = document.getElementById("leave")
 function showResults() {
     questionContainerElement.classList.add("hide");
     resultBox.classList.remove("hide");
-    const scoreText = resultBox
-    resetState();
-    
+    const scoreText = document.getElementById("score_test");
+   /**Message for the User */
+   if (userScore > 7) {
+    let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+    scoreText.innerHTML = scoreTag;
+} else if (userScore > 5) {
+    let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+    scoreText.innerHTML = scoreTag;
+} else if (userScore > 3) {
+    let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+    scoreText.innerHTML = scoreTag;
+} else {
+    let scoreTag = "<span> Sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+    scoreText.innerHTML = scoreTag;
 }
+    resetState();
+}
+
+restartQuiz.addEventListener('click', () => {
+    currentQuestionIndex++;
+    clearInterval(timerInterval)
+    setNextQuestion();
+});
+
 
 function resetState() {
     try {
@@ -108,6 +128,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         button.removeEventListener("click", selectAnswer);
         setStatusClass(button, button.dataset.correct);
+        
     });
     if (currentQuestionIndex < shuffledQuestions.length - 1) {
         nextButton.classList.remove('hide');
@@ -120,6 +141,8 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
+        userScore =+ 1;
+        console.log(userScore);
        
     } else {
         element.classList.add("wrong");
