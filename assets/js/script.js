@@ -33,16 +33,12 @@ nextButton.addEventListener('click', () => {
 
 /**Starting game function */
 function gameStart() {
-    startTest.classList.add('hide');
-    startButton.classList.add('hide');
+    startTest.classList.add("hide");
+    startButton.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion(); 
-    if (que_num === 10) {
-       showResultBox();
-    }
-
 }
 
 /**Getting Next function */
@@ -54,8 +50,7 @@ function setNextQuestion() {
     /**To make sure the quiz stops at 10 */
     if (que_num < 10) { 
         que_num++;
-        queCounter(); 
-        showResultBox();
+        queCounter();
     } else if (que_num === 10) { 
         console.log("Questions Completed");
         return; 
@@ -130,32 +125,6 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
-}
-
-/**Showing the Result Box*/
-function showResultBox(){
-    startTest.classList.remove("hide");
-    startButton.classList.remove("hide");
-    resultBox.classList.add("hide")
-    const scoreText = resultBox
-    if( userScore > 7) {
-        let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
-    else if( userScore > 5) {
-        let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
-    else if( userScore > 3) {
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
-    
-    else{
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
-        scoreText.innerHTML = scoreTag;
-    }
-    
 }
 
 /**Timer function */
