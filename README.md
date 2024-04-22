@@ -46,23 +46,43 @@ Here are my wireframes for both Website and Phone Page:
 
 ## General 
 Introduction about my game 
+I've made a quiz game based on art and to test your knowledge to see if you really know about your art!
+The start of the home page includes an introduction, explaination about what to expect before you click the start button
 
-Start of the home page 
+<img src="assets/documentation/home_page.png" width="400" height="300">
 
-<img src="assets/documentation/game_page.png"  width="300" height="200">
+After clicking the start button, it dives straight into the game setting the timer off
 
-this is when you hover your button over the start button 
+<img src="assets/documentation/start_quiz.png" width="400" height="300">
 
-<img src="assets/documentation/hover_overstart.png" width="300" height="200">
+Once an option has been selected, it will reveal the correct answer based on the colours.
+A number is also displayed to show what number question yopu are on beside the quiz.
+The next button will also appear.
 
-Quiz startiing 
+<img src="assets/documentation/option_selected.png" width="400" height="300">
 
-<img src="assets/documentation/quiz_page.png" width="300" height="200">
+<img src="assets/documentation/next_question_no.png" width="400" height="90">
 
-Quiz answers 
-To show whether the person got a right or wrong answer
+If you don't pick an option to answer and the timer runs out, it will reveal what the correct answer is.
 
-<img src="assets/documentation/quiz_color.png" width="300" height="200">
+<img src="assets/documentation/timer_runs_out.png" wwidth="400" height="300">
+
+Once you make it through ten questions, a result button will show. 
+
+<img src="assets/documentation/results_button.png" wwidth="400" height="300">
+
+Once clicked, the results are revealed to show how many you got correct
+
+<img src="assets/documentation/end_quiz.png" wwidth="400" height="300">
+
+I've also included two choices that can be made here. Either you can take the quiz game or leave it.
+
+<img src="assets/documentation/replay_quit_btns.png" wwidth="400" height="300">
+
+I also managed to include a cool little trick where you hover your mouse over the buttons, it will change colours.
+
+<img src="assets/documentation/hover.png" wwidth="400" height="300">
+
 
 ## Deployment 
 My project was deployed by using the Github pages.
