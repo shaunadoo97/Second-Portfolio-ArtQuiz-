@@ -24,11 +24,19 @@ I've made a game quiz to test your knowledge on Art.
 
 
 ## My Wireframes 
-Here are my wireframes:
+Here are my wireframes for both Website and Phone Page:
 
-<img src="assets/documentation/start_page.png" width="400" height="200">
-<img src="assets/documentation/playing_page.png" width="400" height="200">
-<img src="assets/documentation/thanks.png" width="400" height="200">
+<img src="assets/documentation/website_start.png" width="500" height="300">
+
+<img src="assets/documentation/website_play.png"  width="500" height="300">
+
+<img src="assets/documentation/website_end.png"  width="500" height="300">
+
+<img src="assets/documentation/phone_startpage.png"  width="400" height="500">
+
+<img src="assets/documentation/phone_play.png"  width="400" height="500">
+
+<img src="assets/documentation/phone_end.png"  width="400" height="500">
 
 ## My Colour Schemes
 

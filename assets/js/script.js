@@ -149,15 +149,19 @@ function selectAnswer(e) {
         startButton.innerText = "Results";
         startButton.classList.remove("hide");
     }
+
+    if (selectAnswer == correctAnswers) {
+        userScore += 1;
+        answer.classList.add("correct");
+        console.log("Correct!")
+    }
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        userScore = +1;
         console.log(userScore);
-
     } else {
         element.classList.add("wrong");
     }
@@ -200,14 +204,6 @@ function startTimer(time) {
 
 }
 
-function resetQuiz() {
-    clearInterval(counter);
-    currentQuestionIndex = 0;
-    resetState();
-    timeCount.textContent = "00";
-    startButton.innerText = "Start";
-    startButton.classList.remove("hide");
-}
 
 /**Adding in the Art Questions */
 const questions = [{
