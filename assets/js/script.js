@@ -1,29 +1,26 @@
-/**Credits to Web Dev for javascript and functionality of my quiz game*/
+/**Credits to Web Dev, Coding Nepal, Ali Aslan for javascript and functionality of my quiz game*/
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const startTest = document.getElementById('intro');
 const questionContainerElement = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-btns');
-const timeCount = document.getElementById("count_down")
-const overAll = document.getElementById("")
+const timeCount = document.getElementById("count_down");
 
 document.addEventListener("DOMContentLoaded", startButton);
 
 let shuffledQuestions, currentQuestionIndex;
-let scoreCounter = 1;
-let score = 1;
 let timerInterval;
 let counter;
 let timeValue = 10;
-let que_count = 1
+let que_count = 1;
 let userScore = 0;
 
 
 startButton.addEventListener('click', gameStart);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
-    clearInterval(timerInterval)
+    clearInterval(timerInterval);
     setNextQuestion();
 });
 
@@ -55,7 +52,6 @@ function setNextQuestion() {
     }
 }
 
-
 /**Displaying questions*/
 function showQuestion(question) {
     questionElement.innerText = question.question;
@@ -74,10 +70,9 @@ function showQuestion(question) {
     });
 }
 
-const resultBox = document.getElementById("result_box")
-const restartQuiz = document.getElementById("restart")
-const leaveGame = document.getElementById("leave")
-
+const resultBox = document.getElementById("result_box");
+const restartQuiz = document.getElementById("restart");
+const leaveGame = document.getElementById("leave");
 
 /**To display how many questions have been answered. */
 function showResults() {
@@ -102,9 +97,10 @@ function showResults() {
     resetState();
 }
 
+/**Restart the game when replay button is clicked */
 restartQuiz.onclick = () => {
-   resultBox.classList.add("hide")
-   startTest.classList.remove("hide")
+   resultBox.classList.add("hide");
+   startTest.classList.remove("hide");
    currentQuestionIndex = 0;
    que_count = 0;
    userScore = 0;
@@ -112,11 +108,12 @@ restartQuiz.onclick = () => {
    clearInterval(counter);
    resetState();
    gameStart();
-}
+};
 
+/**Leave the Game completely when leave button is clicked */
 leaveGame.onclick = () => {
     window.location.reload();
-}
+};
 
 function resetState() {
     try {
@@ -130,8 +127,6 @@ function resetState() {
     }
 }
 
-let correctAnswers = 0;
-
 /**Selecting answer to reveal correct/wrong questions */
 function selectAnswer(e) {
     clearInterval(counter);
@@ -141,7 +136,6 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         button.removeEventListener("click", selectAnswer);
         setStatusClass(button, button.dataset.correct);
-
     });
     if (currentQuestionIndex < shuffledQuestions.length - 1) {
         nextButton.classList.remove('hide');
@@ -149,21 +143,17 @@ function selectAnswer(e) {
         startButton.innerText = "Results";
         startButton.classList.remove("hide");
     }
-
-    if (selectAnswer == correctAnswers) {
-        userScore += 1;
-        answer.classList.add("correct");
-        console.log("Correct!")
-    }
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
-    if (correct) {
-        element.classList.add("correct");
+    if (correct) { 
+        userScore += 1;
         console.log(userScore);
+        element.classList.add("correct"); 
     } else {
         element.classList.add("wrong");
+        
     }
 }
 
@@ -174,7 +164,7 @@ function clearStatusClass(element) {
 
 /**Timer function */
 function startTimer(time) {
-    counter = setInterval(timer, 1000)
+    counter = setInterval(timer, 1000);
 
     function timer() {
         timeCount.textContent = time;
@@ -186,7 +176,7 @@ function startTimer(time) {
         if (time < 0) {
             clearInterval(counter);
             timeCount.textContent = "00";
-            correctAns()
+            correctAns();
         }
     }
 
@@ -199,11 +189,10 @@ function startTimer(time) {
         Array.from(answerButtonsElement.children).forEach(button => {
             button.removeEventListener("click", selectAnswer);
         });
-        nextButton.classList.remove("hide")
+        nextButton.classList.remove("hide");
     }
 
 }
-
 
 /**Adding in the Art Questions */
 const questions = [{
@@ -419,8 +408,4 @@ const questions = [{
         ]
 
     },
-
-
-
-
 ];
