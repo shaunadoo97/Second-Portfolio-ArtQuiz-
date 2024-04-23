@@ -68,6 +68,7 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
     });
+    
 }
 
 const resultBox = document.getElementById("result_box");
@@ -132,6 +133,12 @@ function selectAnswer(e) {
     clearInterval(counter);
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
+    if (correct) {
+        userScore++; 
+        console.log(userScore);
+    } else {
+        console.log("Answer is incorrect")
+    }
     setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
         button.removeEventListener("click", selectAnswer);
@@ -148,8 +155,6 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) { 
-        userScore += 1;
-        console.log(userScore);
         element.classList.add("correct"); 
     } else {
         element.classList.add("wrong");

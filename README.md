@@ -128,6 +128,8 @@ It wasn't showing as objects anymore.
 
 <img src="assets/documentation/objects.png">
 
+Another huge issue I had was the userScore. Everytime a right answer was selected, it dubilcates in the consol.log. 
+
 
 
 ## Testing and Code Validation 
@@ -139,6 +141,8 @@ Html testing so far, no errors
 css testing so far, no errors 
 
 <img src="assets/documentation/updated_css.png">
+
+I had also tested JavaScript using Jshint 
 
 ## Accessibility 
 Testing so far from the Lighthouse accessibility
