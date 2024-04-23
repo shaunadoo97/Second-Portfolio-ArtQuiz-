@@ -7,6 +7,7 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-btns');
 const timeCount = document.getElementById("count_down");
 
+/**Credits to Web Dev simplified to start the Quiz*/
 document.addEventListener("DOMContentLoaded", startButton);
 
 let shuffledQuestions, currentQuestionIndex;
@@ -53,6 +54,7 @@ function setNextQuestion() {
 }
 
 /**Displaying questions*/
+/**Credits to both GreatStack and Web Dev */
 function showQuestion(question) {
     questionElement.innerText = question.question;
     let questionNo = currentQuestionIndex + 1;
@@ -71,6 +73,7 @@ function showQuestion(question) {
     
 }
 
+/**Credits to CodeNepal*/
 const resultBox = document.getElementById("result_box");
 const restartQuiz = document.getElementById("restart");
 const leaveGame = document.getElementById("leave");
@@ -81,7 +84,7 @@ function showResults() {
     resultBox.classList.remove("hide");
     const scoreText = document.getElementById("score_test");
 
-    /**Message for the User */
+/**Message for the User, credits to CodeNepal messages*/
     if (userScore > 7) {
         let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
@@ -98,7 +101,7 @@ function showResults() {
     resetState();
 }
 
-/**Restart the game when replay button is clicked */
+/**Restart the game completely and reset data when replay button is clicked */
 restartQuiz.onclick = () => {
    resultBox.classList.add("hide");
    startTest.classList.remove("hide");
@@ -111,7 +114,7 @@ restartQuiz.onclick = () => {
    gameStart();
 };
 
-/**Leave the Game completely when leave button is clicked */
+/**Leave the Game completely when leave button is clicked*/
 leaveGame.onclick = () => {
     window.location.reload();
 };
@@ -127,8 +130,8 @@ function resetState() {
         alert(err.message);
     }
 }
-
-/**Selecting answer to reveal correct/wrong questions */
+/**Credits to Web Dev simplified */
+/**Selecting answer to reveal correct/wrong questions and updating ScoreBoard*/
 function selectAnswer(e) {
     clearInterval(counter);
     const selectedButton = e.target;
@@ -158,7 +161,6 @@ function setStatusClass(element, correct) {
         element.classList.add("correct"); 
     } else {
         element.classList.add("wrong");
-        
     }
 }
 
@@ -167,6 +169,7 @@ function clearStatusClass(element) {
     element.classList.remove('wrong');
 }
 
+/**Credits to CodeNepal help with the timer*/
 /**Timer function */
 function startTimer(time) {
     counter = setInterval(timer, 1000);
@@ -185,7 +188,7 @@ function startTimer(time) {
         }
     }
 
-    /**Reveal answer when timer is up*/
+    /**Reveal answer when timer is up and next button displays*/
     function correctAns() {
         const correctBtn = Array.from(answerButtonsElement.children).find(button => button.dataset.correct === 'true');
         if (correctBtn) {
@@ -200,7 +203,8 @@ function startTimer(time) {
 }
 
 /**Adding in the Art Questions */
-const questions = [{
+const questions = [
+    {
         question: 'Which artist is famous for his series of paintings featuring water lilies?',
         answers: [{
                 text: 'Claude Monet',
