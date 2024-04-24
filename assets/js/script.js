@@ -95,7 +95,7 @@ function showResults() {
         let scoreTag = "<span> Close, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     } else if (userScore > 3) {
-        let scoreTag = "<span> Good attempt, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
+        let scoreTag = "<span> Good attempt, you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     } else {
         let scoreTag = "<span> Sorry, you got only <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
