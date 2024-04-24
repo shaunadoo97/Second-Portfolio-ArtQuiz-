@@ -1,15 +1,18 @@
-<img src="assets/documentation/am_i_responsive.png">
+<img src="assets/documentation//responsive.png">
 
 Welcome to my Art Quiz Test!
 I've made a game quiz to test your knowledge on Art. 
 
 # Contents 
 
+
+[Introduction](#introduction  "Go to my-introduction")
+
 [My Wireframes](#my-wireframes "Go to my-wireframes")
 
 [My Colour Schemes](#my-colour-schemes "Go to my-colour-schemes")
 
-[General](#general "Go to general")
+[About my site](#about-my-site "Go to about-my-site")
 
 [Testing and Code Validation](#testing-and-code-validation "Go to my-wireframes")
 
@@ -23,8 +26,18 @@ I've made a game quiz to test your knowledge on Art.
 
 [Credits and Codes](#credits-and-codes "Go to credits-and-codes")
 
+## Introduction
+An introduction to my website. A quiz that includes 10 questions all about Art being randomly displayed everytime when activated, in the end you will receieve the results to see how well you've done. 
+My Art quiz is mostly aimed at Artists/Art students even visitors who can take a look and have a go for fun.
+
+## My Goals as a new user
+As a new user, I'd like to be introduced to the instrctions on the first page and have an idea what to expect before I click play. I would hope for this to be a fun experience aswell as learning a thing or two from the quiz about Art history. 
+I would like to find out in the end on how well did I do, how many did I get right and an option to play again if I didn't do too good to beat my score.
+I'd like to see a quit button to leave the game once I'm satisfied with my results after playing this game. 
 
 ## My Wireframes 
+I had to re-design my wireframes from the previous original designs as they were too plain and basic. 
+I created my rough ideas useing the Balsamiq Software
 Here are my wireframes for both Website and Phone Page:
 
 <img src="assets/documentation/website_start.png">
@@ -45,7 +58,7 @@ Here are my wireframes for both Website and Phone Page:
 
  <img src="assets/documentation/colour.png"> 
 
-## General 
+## About my site
 Introduction about my game 
 I've made a quiz game based on art and to test your knowledge to see if you really know about your art!
 The start of the home page includes an introduction, explaination about what to expect before you click the start button
@@ -84,6 +97,17 @@ I also managed to include a cool little trick where you hover your mouse over th
 
 <img src="assets/documentation/hover.png">
 
+## Future features and changes for my site:
+
+-If I have time, I'd like to re-structure my quiz and include a "Play Game", "Instructions" and "Contact" all in one main menu. 
+
+-I'd like to add in my social medias at the bottom of my site in the footer.
+
+-I'd also like to resconsider changining the design of my site to make it feel more like artsy.
+
+-I'd also like to add an image in some of my quiz e.g picture of Mona Lisa for the "Who painted Mona Lisa?" question.
+
+-I'd like a send a message feature for users to get in touch on what they thought of the game or how if could improve it to make it look better
 
 ## Deployment 
 My project was deployed by using the Github pages.
@@ -129,8 +153,27 @@ It wasn't showing as objects anymore.
 <img src="assets/documentation/objects.png">
 
 Another huge issue I had was the userScore. Everytime a right answer was selected, it dubilcates in the consol.log. 
+For ages I couldn't understand as to why this was happening and i kept putting the 
+if (correct) {
+    userScore++;
+    console.log(userScore)
+}
+on line 164 in js. After looking at some videos, some were putting this in their selectedAnswer() Function and this worked eventually. 
+This is what Console.log looked in first place
 
+<img src="assets/documentation/userscore_repeat.png">
 
+I was only on question 3 and the number was showing a number ahead. When i clicked the right answer, it the plus 1 was added twice.
+
+<img src="assets/documentation/userscore_repeat_again.png">
+
+After fixing the issue 
+With changing the userScore++ into the selectedAnswer(e), the scores add up whenever a right answer is clicked and userScore will be displayed at the end of game.
+
+<img src="assets/documentation/correct_userscore.png">
+
+Other than the major bugs and issues, I've had little ones such as in the console.log to let me know whether I had forgotten to declare a variable or mispelled it. Also, some would be missing a semi-colon or if I had accidentally removed a curly bracket when needed to run the code properly. 
+There was a few times my computer took a while to update to the point that I would have to restart it to let it catch up with the new updates I've applied to the code. 
 
 ## Testing and Code Validation 
 
@@ -142,7 +185,23 @@ css testing so far, no errors
 
 <img src="assets/documentation/updated_css.png">
 
-I had also tested JavaScript using Jshint 
+I had also tested JavaScript using JS.hint 
+https://jshint.com/
+
+These are the outcomes of this code:
+
+Metrics
+There are 20 functions in this file.
+
+Function with the largest signature take 2 arguments, while the median is 0.
+
+Largest function has 13 statements in it, while the median is 4.5.
+
+The most complex function has a cyclomatic complexity value of 4 while the median is 1.
+
+Although I do have 36 warnings but I don't appear to have the Moz extension on my computer. 
+
+<img src="assets/documentation/jshint.png">
 
 ## Accessibility 
 Testing so far from the Lighthouse accessibility
@@ -151,10 +210,10 @@ Testing so far from the Lighthouse accessibility
 
 
 ## Credits and Codes
-### Codes so far 
+### Codes 
 I've used the css layout from https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1396s
 
-I used these videos to put my Quiz together but altered in my own way:
+I used these videos to put my Quiz together but altered in my own way combined as all videos were done differently:
 
 https://www.youtube.com/watch?v=riDzcEQbX6k
 
@@ -166,8 +225,10 @@ https://www.youtube.com/watch?v=pQr4O1OITJo&t=2160s
 
 I've used reference from W3 Schools for timer function: 
 
-https://www.w3schools.com/ 
+https://www.w3schools.com/
 
 I got my random art quiz questions from 
 
 https://chat.openai.com/ 
+
+Also a special thanks to my mentor Rory Patrick who has helped and guided me through this project as it wasn't an easy one to get through. 

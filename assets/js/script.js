@@ -27,6 +27,7 @@ nextButton.addEventListener('click', () => {
 
 /**Starting game function */
 function gameStart() {
+    console.log("Game Started!")
     startTest.classList.add("hide");
     startButton.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5);
@@ -48,8 +49,10 @@ function setNextQuestion() {
             showResults();
         }
         que_count++;
+/**Display in Console.log to how quiz has been completed */
     } else {
         showResults();
+        console.log("Quiz ended")
     }
 }
 
@@ -85,7 +88,7 @@ function showResults() {
     const scoreText = document.getElementById("score_test");
 
 /**Message for the User, credits to CodeNepal messages*/
-    if (userScore > 7) {
+    if (userScore > 8) {
         let scoreTag = "<span> Congrats! you got <p>" + userScore + "</p> out of <p>" + shuffledQuestions.length + "</p></span>";
         scoreText.innerHTML = scoreTag;
     } else if (userScore > 5) {
@@ -140,7 +143,7 @@ function selectAnswer(e) {
         userScore++; 
         console.log(userScore);
     } else {
-        console.log("Answer is incorrect")
+        console.log("Answer is incorrect");
     }
     setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
@@ -246,7 +249,6 @@ const questions = [
         ]
 
     },
-
     {
         question: 'Which artist famously cut off his own ear?',
         answers: [{
@@ -268,7 +270,6 @@ const questions = [
         ]
 
     },
-
     {
         question: 'Who is the artist behind the "Sistine Chapel Ceiling" frescoes in Vatican City?',
         answers: [{
@@ -290,7 +291,6 @@ const questions = [
         ]
 
     },
-
     {
         question: 'Which art movement is known for its use of vibrant colors and swirling shapes?',
         answers: [{
@@ -415,6 +415,5 @@ const questions = [
                 correct: true
             },
         ]
-
     },
 ];
