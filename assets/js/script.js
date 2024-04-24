@@ -104,7 +104,7 @@ function showResults() {
     resetState();
 }
 
-/**Restart the game completely and reset data when replay button is clicked */
+/**Restart the game completely and reset data/timer when replay button is clicked */
 restartQuiz.onclick = () => {
    resultBox.classList.add("hide");
    startTest.classList.remove("hide");
